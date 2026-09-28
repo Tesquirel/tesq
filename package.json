@@ -26,7 +26,7 @@
     "jquery": "^3.7.1",
     "magnific-popup": "^1.2.0",
     "ngx-editor": "^19.0.0-beta.1",
-    "ngx-quill": "^28.0.1",
+    "ngx-quill": "^27.1.2",
     "quill": "^2.0.3",
     "rxjs": "~7.8.0",
     "swiper": "^12.1.3",
