@@ -1,0 +1,47 @@
+.fp-icon {
+  color: #11ddf5;
+  margin-right: 8px;
+}
+
+.techwix-hero-section-03 {
+  height: 100vh;
+}
+
+.techwix-hero-section-03 .shape-1 {
+  top: -50%;
+}
+
+.techwix-hero-section-03 .hero-content .title {
+  font-size: 48px;
+}
+
+.service-content {
+  padding-top: 0px !important;
+
+  p {
+    margin-top: 10px;
+  }
+}
+
+table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.banner-text {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+}

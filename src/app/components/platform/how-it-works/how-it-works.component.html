@@ -1,0 +1,165 @@
+<main class="how-it-works-page">
+
+  <!-- ============ HERO (IMAGE ONLY) ============ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__media">
+        <br>
+        <br>
+        <img src="assets/images/platform/howitswork.png" alt="Overview of the TesQuirel quality engineering platform"
+          loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE CHALLENGE / INTRO ============ -->
+  <section class="section challenge">
+    <div class="section__inner">
+      <h2>From business intent to release confidence</h2>
+      <p>
+        TesQuirel starts where quality truly begins—with business intent, customer outcomes, risks and acceptance
+        criteria, not test scripts.  Business requirements are transformed into meaningful test scenarios, test data and
+        risk-based coverage across the complete application landscape. From Web, API and Mobile to data, integrations
+        and legacy systems, testing is executed as a connected quality process rather than isolated activities.  Every
+        test, defect, result and piece of evidence remains traceable to the underlying business requirement and release
+        risk. AI assists teams in designing and optimising tests, while human governance remains accountable for
+        coverage, risk and release decisions.
+
+        The result is more than test execution—it is evidence-based release confidence, enabling organisations to
+        release faster with greater coverage, controlled risk and measurable quality.
+      </p>
+    </div>
+
+    <!-- Button moved inside the section -->
+    <div class="hero__cta">
+      <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="hero__button">Talk to an Expert</a>
+    </div>
+  </section>
+  <!-- ============ PIPELINE / SEVEN STAGES ============ -->
+  <section class="section pipeline-section">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Seven stages. One connected flow.</h2>
+        <!-- <p>Each stage builds on the one before it, from business intent through to release confidence.</p> -->
+      </div>
+
+      <ul class="pipeline">
+        <li class="pipeline__step" *ngFor="let s of steps; let i = index"
+          [ngClass]="s.product ? 'pipeline__step--' + s.product.key : ''">
+          <div class="pipeline__icon">{{ s.step }}</div>
+
+          <div class="pipeline__content">
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.description }}</p>
+
+            <a *ngIf="s.product as p" [routerLink]="p.path" class="text-link" [ngClass]="'text-link--' + p.key">
+              See how {{ p.label }} fits in
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ PLATFORM FLOW DIAGRAM ============ -->
+  <section class="section connected">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>The platform flow, end to end</h2>
+        <!-- <p>Business intent, test intelligence, automation, validation and evidence — connected, not siloed.</p> -->
+      </div>
+
+      <img src="assets/images/platform/howitsworkhero.png"
+        alt="Diagram of the TesQuirel platform flow, from business intent to release confidence"
+        class="connected__figure" />
+
+      <p class="connected__summary">
+        TesQuirel connects traceability, execution evidence and reporting so quality conversations
+        can move from "Did the tests run?" to "What do we know about the release?"
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PLATFORM NAVIGATION ============ -->
+  <!-- <section class="section platform-nav">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Platform navigation</h2>
+        <p>Keep exploring how TesQuirel turns testing activity into release confidence.</p>
+      </div>
+
+      <div class="platform-nav__grid">
+        <a class="nav-card" routerLink="/Platform/How-it-works">
+          <h3>How It Works</h3>
+          <p>Explore the seven stages of quality engineering.</p>
+          <span class="nav-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="nav-card" routerLink="/Platform/Architecture">
+          <h3>Architecture</h3>
+          <p>Understand the connected quality architecture.</p>
+          <span class="nav-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="nav-card" routerLink="/Platform/Key-capabilities">
+          <h3>Key Capabilities</h3>
+          <p>Discover the platform's connected capabilities.</p>
+          <span class="nav-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="nav-card" routerLink="/Platform/Outcomes">
+          <h3>Outcomes</h3>
+          <p>See the quality outcomes you can achieve.</p>
+          <span class="nav-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq">
+    <div class="section__inner narrow">
+      <div class="section__heading">
+        <h2>Frequently Asked Questions?</h2>
+      </div>
+
+      <ul class="faq__list">
+        <li class="faq__item" *ngFor="let f of faqs; let i = index" [class.faq__item--open]="isFaqOpen(i)">
+          <button type="button" class="faq__question" [attr.aria-expanded]="isFaqOpen(i)"
+            [attr.aria-controls]="'faq-panel-' + i" (click)="toggleFaq(i)">
+            <span>{{ f.question }}</span>
+            <svg class="faq__chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M4.5 7l4.5 4.5L13.5 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <p class="faq__answer" *ngIf="isFaqOpen(i)" [id]="'faq-panel-' + i">
+            {{ f.answer }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>

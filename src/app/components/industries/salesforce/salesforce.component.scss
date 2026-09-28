@@ -1,0 +1,38 @@
+.techwix-hero-section-03 {
+  height: 100vh;
+}
+
+.techwix-hero-section-03 .shape-1 {
+  top: -50%;
+}
+
+.techwix-hero-section-03 .hero-content .title {
+  font-size: 48px;
+}
+
+table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.banner-text {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+}
+
+.salesforce-heading {
+  color: #fff;
+}

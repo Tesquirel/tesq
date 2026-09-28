@@ -1,0 +1,248 @@
+.roi-container {
+  //   max-width: 1200px;
+  margin: auto;
+  padding: inherit;
+  font-family: "Inter", sans-serif;
+}
+
+.roi-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #000;
+    // background: linear-gradient(90deg, #6d5dfc, #b76cff);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: #6b7280;
+    margin-top: 6px;
+  }
+}
+
+// .roi-grid {
+//   //   display: grid;
+//   //   grid-template-columns: 320px 1fr;
+//   //   gap: 30px;
+// }
+
+/* LEFT PANEL */
+
+.input-panel {
+  background: #f8fafc;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #374151;
+  }
+
+  input,
+  select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+  }
+
+  select {
+    height: 100px;
+  }
+}
+
+.generate-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+}
+
+.generate-btn:disabled {
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* RIGHT PANEL */
+
+// .result-panel {
+//   //   display: flex;
+//   //   flex-direction: column;
+//   //   gap: 20px;
+// }
+
+// .stats {
+//   //   display: grid;
+//   //   grid-template-columns: 1fr 1fr;
+//   //   gap: 20px;
+// }
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-card {
+  width: 49%;
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+
+  p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 800;
+  }
+}
+
+.savings {
+  border-top: 4px solid #4f6df5;
+
+  h2 {
+    color: #4f6df5;
+  }
+}
+
+.efficiency {
+  border-top: 4px solid #16a34a;
+
+  h2 {
+    color: #16a34a;
+  }
+}
+
+/* CHART */
+
+.chart-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  height: 400px;
+  margin-top: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.pdf-btn {
+  background: #1f2937;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+canvas {
+  max-width: 100% !important;
+}
+
+.pdf-layout {
+  display: none;
+  // width: 800px;
+  width: 100%;
+  // max-width: 750px; /* important for A4 */
+  background: white;
+  padding: 40px;
+}
+
+.pdf-layout table {
+  width: 100%;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.pdf-layout th,
+.pdf-layout td {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.pdf-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 12px;
+  color: #666;
+
+  border-top: 1px solid #ddd;
+  padding: 8px 20px;
+  background: #fff;
+}
+
+.tesquirel-logo {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.T,
+.ES {
+  font-family: sans-serif;
+  font-weight: 700;
+  color: var(--tesquirel-blue);
+}
+
+.QUIREL {
+  color: var(--tesquirel-green) !important;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.header-logo img {
+  width: 60px !important;
+}

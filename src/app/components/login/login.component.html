@@ -1,0 +1,53 @@
+<!-- Login & Register Start -->
+<div class="section login-register-section section-padding-02">
+  <div class="container">
+    <!-- Login & Register Wrapper Start -->
+    <div class="login-register-wrap">
+      <div class="row gx-5">
+        <div class="col-lg-12">
+          <!-- Login & Register Box Start -->
+          <div class="login-register-box">
+            <!-- Section Title Start -->
+            <div class="section-title">
+              <h2 class="title">Web Login</h2>
+            </div>
+            <!-- Section Title End -->
+
+            <div class="login-register-form">
+              <form [formGroup]="loginForm">
+                <div class="single-form">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Username "
+                    formControlName="username"
+                  />
+                </div>
+                <div class="single-form">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    formControlName="password"
+                  />
+                </div>
+                <div class="form-btn">
+                  <button
+                    class="btn"
+                    [disabled]="!loginForm.valid"
+                    (click)="login()"
+                  >
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Login & Register Box End -->
+        </div>
+      </div>
+    </div>
+    <!-- Login & Register Wrapper End -->
+  </div>
+</div>
+<!-- Login & Register End -->

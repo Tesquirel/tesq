@@ -1,0 +1,166 @@
+<div
+  class="section techwix-about-section-07 section-padding padding-top-bottom"
+>
+  <div class="container" id="roi-content">
+    <div class="container" id="report-frame">
+      <div class="header">
+        <h1>TesQuirel <span class="accent">Breez</span> Strategy Analysis</h1>
+        <p>Strategic ROI & No-Script Implementation Roadmap</p>
+      </div>
+
+      <div class="input-grid no-print">
+        <div class="card">
+          <h3>1. Identity</h3>
+          <!-- <input [(ngModel)]="userData.name" placeholder="Contact Name" />
+          <input [(ngModel)]="userData.email" placeholder="Business Email" /> -->
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="name" formControlName="fullName" />
+          </div>
+
+          <div class="form-group">
+            <label>Email ID</label>
+            <input type="email" formControlName="emailId" />
+          </div>
+
+          <div class="form-group">
+            <label>Company Name</label>
+            <input type="name" formControlName="companyName" />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              [(ngModel)]="userData.testers"
+              placeholder="Current QA Team Size"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              [(ngModel)]="userData.avgSalary"
+              placeholder="Avg Annual Salary per Tester"
+            />
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>2. Landscape</h3>
+          <input
+            type="number"
+            [(ngModel)]="userData.totalApps"
+            placeholder="Number of Apps"
+          />
+          <input
+            type="number"
+            [(ngModel)]="userData.totalTCs"
+            placeholder="Total Test Cases"
+          />
+          <input
+            type="number"
+            [(ngModel)]="userData.tcGrowth"
+            placeholder="TC Growth % (YoY)"
+          />
+          <select multiple [(ngModel)]="userData.appTypes" class="app-select">
+            <option value="Web">Web Apps</option>
+            <option value="Mobile">Mobile Apps</option>
+            <option value="API">API/Microservices</option>
+            <option value="Legacy">Legacy/Insurance Core</option>
+          </select>
+        </div>
+
+        <div class="card">
+          <h3>3. Regression</h3>
+          <div class="toggle-row">
+            <label>Perform Regression?</label>
+            <input type="checkbox" [(ngModel)]="userData.hasRegression" />
+          </div>
+          <input
+            *ngIf="userData.hasRegression"
+            type="number"
+            [(ngModel)]="userData.regTCs"
+            placeholder="Regression TC Count"
+          />
+          <input
+            type="number"
+            [(ngModel)]="userData.manualTimeHrs"
+            placeholder="Manual Hrs Spent/Month"
+          />
+          <button class="btn-calc" (click)="calculateAll()">
+            Recalculate Impact
+          </button>
+        </div>
+      </div>
+
+      <hr class="no-print" />
+
+      <div class="report-body">
+        <div class="stat-row">
+          <div class="stat-box">
+            <small>Projected 2-Year Savings</small>
+            <h2>${{ savings.total | number }}</h2>
+          </div>
+          <div class="stat-box">
+            <small>Full Implementation Timeline</small>
+            <h2>{{ timeline.total }} Weeks</h2>
+          </div>
+        </div>
+
+        <h3>Strategic Automation Approach</h3>
+
+        <ul class="strategy-list">
+          <li *ngFor="let point of strategyPoints">{{ point }}</li>
+        </ul>
+
+        <div class="page-break"></div>
+
+        <h3>Implementation Roadmap (Max 1 Year)</h3>
+        <div class="timeline-visual">
+          <div class="phase">
+            <strong
+              >Phase 1: Environment Audit ({{ timeline.p1 }} Weeks)</strong
+            >
+            <p>
+              Mapping application topology and NLP training for Breez Agents.
+            </p>
+          </div>
+          <div class="phase">
+            <strong>Phase 2: Pilot Migration ({{ timeline.p2 }} Weeks)</strong>
+            <p>
+              Implementing VeritAI authoring and core regression conversion.
+            </p>
+          </div>
+          <div class="phase">
+            <strong>Phase 3: Ecosystem Scale ({{ timeline.p3 }} Weeks)</strong>
+            <p>
+              Full visual regression with AIris and CI/CD pipeline
+              orchestration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-section">
+      <h2>Transform Your Quality Engine</h2>
+      <p>
+        This data confirms a significant efficiency gap. Let's bridge it
+        together.
+      </p>
+      <div class="btn-group">
+        <!-- <a
+          href="https://calendly.com/tesquirel/consultation"
+          class="btn-primary"
+          >Schedule Appointment</a
+        > -->
+        <button
+          class="btn btn-primary no-print"
+          [routerLink]="'/book-an-appointment'"
+        >
+          Schedule Appointment</button
+        >&nbsp;
+        <button class="btn btn-primary no-print" (click)="downloadPDF()">
+          Download Report
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

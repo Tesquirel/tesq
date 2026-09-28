@@ -1,0 +1,160 @@
+<main class="tv">
+
+  <!-- HERO -->
+  <section class="tv-hero">
+    <div class="tv-hero__media">
+        <br>
+        <br>
+      <img src="assets/images/solution/TrustVerse-Hero-2.png"
+           alt="TrustVerse — Engineer Trust for What's Next: guardrails, evidence, accountability, governance and continuous evaluation"
+           class="tv-hero__image" />
+    </div>
+    <section class="tv-section">
+    <div class="tv-container tv-container--narrow">
+      <!-- <h2 class="tv-section__title">Why TrustVerse Exists</h2> -->
+      <p class="tv-section__text">
+        Trust AI. Engineer Quality. Prove Every Decision. — A trusted AI Quality Engineering perspective built around measurable behavior, guardrails, evidence and accountable outcomes.
+    </div>
+  </section>
+    <div class="tv-container tv-hero__cta-wrap">
+      <!-- <a class="tv-btn tv-btn--primary"
+         [href]="expertBookingUrl"
+         target="_blank"
+         rel="noopener noreferrer">
+        Talk to an Expert
+      </a> -->
+        <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="tv-btn tv-btn--primary"> Talk to an Expert </a>
+    </div>
+  </section>
+
+  <!-- WHY TRUSTVERSE EXISTS -->
+  <section class="tv-section">
+    <div class="tv-container tv-container--narrow">
+      <h2 class="tv-section__title">Why TrustVerse Exists</h2>
+      <p class="tv-section__text">
+        AI has moved from creating content to influencing decisions, executing tasks and working
+        as an agent. This changes the quality problem. AI systems can be based on probabilities
+        to context, able to change and capable of doing actions across many systems. TrustVerse
+        sees Trust as something that is built than just said. Accuracy is still important. But,
+        it is just one part. A trusted AI system also needs limits in decisions it can take
+        independently. Major actions or decisions to be verified by someone who is responsible
+        and accountable.
+      </p>
+    </div>
+  </section>
+
+  <!-- THE TRUSTVERSE PRINCIPLE -->
+  <section class="tv-section tv-section--tint">
+    <div class="tv-container tv-container--narrow">
+      <h2 class="tv-section__title">The TrustVerse Principle</h2>
+      <p class="tv-section__text">
+        AI quality is not completed until its decisions and actions can be understood,
+        controlled, proven and owned. TrustVerse brings these parts together into a plan for
+        AI-based Quality Engineering and checking. It is for AI applications, RAG systems,
+        LLM-driven workflows and agent systems where companies need to feel sure during and
+        after putting them to use.
+      </p>
+      <img src="assets/images/solution/TrustVerse - Foundations.png"
+           alt="TrustVerse foundations of trusted AI quality engineering"
+           class="tv-section__image" />
+    </div>
+  </section>
+
+  <!-- SIX TRUST DIMENSIONS -->
+  <section class="tv-section">
+    <div class="tv-container">
+      <h2 class="tv-section__title tv-section__title--center">Six Trust Dimensions</h2>
+      <div class="tv-dimensions">
+        <div class="tv-dimensions__card" *ngFor="let dimension of trustDimensions">
+          <h3 class="tv-dimensions__title">{{ dimension.title }}</h3>
+          <p class="tv-dimensions__text">{{ dimension.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FROM TESTING TO TRUST ENGINEERING -->
+  <section class="tv-section tv-section--tint">
+    <div class="tv-container">
+      <h2 class="tv-section__title tv-section__title--center">From Testing to Trust Engineering</h2>
+      <p class="tv-section__text tv-section__text--center">
+        TrustVerse expands the Quality Engineering lifecycle from test execution to trust
+        engineering. The question becomes not only "Did the answer pass?" but also "Was the
+        decision appropriate, were constraints respected and can the outcome be defended?"
+      </p>
+      <ol class="tv-lifecycle">
+        <li class="tv-lifecycle__step" *ngFor="let stage of lifecycleStages; let i = index">
+          <span class="tv-lifecycle__number">{{ i + 1 }}</span>
+          <div class="tv-lifecycle__content">
+            <h3 class="tv-lifecycle__title">{{ stage.title }}</h3>
+            <p class="tv-lifecycle__text">{{ stage.description }}</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WHERE TRUSTVERSE APPLIES -->
+  <section class="tv-section">
+    <div class="tv-container tv-container--narrow">
+      <h2 class="tv-section__title">Where TrustVerse Applies</h2>
+      <p class="tv-section__text">
+        TrustVerse can be applied to AI assistants, RAG applications, copilots, AI-enabled
+        enterprise workflows, decision-support systems and agentic AI. It can complement
+        existing Quality Engineering, governance, security, risk and compliance practices.
+      </p>
+      <ul class="tv-tags">
+        <li class="tv-tags__item" *ngFor="let item of appliesTo">{{ item }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section class="tv-section tv-section--tint">
+    <div class="tv-container tv-container--narrow">
+      <h2 class="tv-section__title">Outcome</h2>
+      <p class="tv-section__text">
+        The objective is defensible AI: systems whose quality is measurable, whose behavior is
+        constrained, whose important outcomes are supported by strong evidence and whose
+        decisions have accountable ownership.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section class="tv-section">
+    <div class="tv-container tv-container--narrow">
+      <h2 class="tv-section__title tv-section__title--center">Frequently Asked Questions?</h2>
+      <div class="tv-faq">
+        <div class="tv-faq__item" *ngFor="let faq of faqs; let i = index" [class.tv-faq__item--open]="faq.open">
+          <button class="tv-faq__question"
+                  type="button"
+                  (click)="toggleFaq(i)"
+                  [attr.aria-expanded]="faq.open">
+            <span class="tv-faq__question-text">{{ faq.question }}</span>
+            <span class="tv-faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="tv-faq__answer" *ngIf="faq.open">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+      <a class="tv-link" href="/app92-percet" rel="noopener noreferrer">92% Accuracy Is not Enough</a>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="tv-cta">
+    <div class="tv-container tv-cta__inner">
+      <h2 class="tv-cta__title">Ready to make your AI decisions defensible?</h2>
+      <p class="tv-cta__text">Talk to a TrustVerse expert about your AI quality engineering plan.</p>
+      <a class="tv-btn tv-btn--primary tv-btn--light"
+         [href]="expertBookingUrl"
+         target="_blank"
+         rel="noopener noreferrer">
+        Talk to an Expert
+      </a>
+    </div>
+  </section>
+
+</main>

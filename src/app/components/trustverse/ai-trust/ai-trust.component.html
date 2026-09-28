@@ -1,0 +1,109 @@
+<main class="ait">
+
+  <!-- HERO -->
+  <section class="ait-hero">
+    <div class="ait-hero__media">
+      <br>
+      <br>
+      <img src="assets/images/solution/aigovernece-hero.png"
+           alt="AI Trust Requires Governance You Can Operate — a trusted AI Quality Engineering perspective built around measurable behavior, guardrails, evidence and accountable outcomes"
+           class="ait-hero__image" />
+    </div>
+    <section class="ait-section">
+      <div class="ait-container ait-container--narrow">
+        <p class="ait-section__text">
+          AI Trust Requires Governance You Can Operate — A trusted AI Quality Engineering
+          perspective built around measurable behavior, guardrails, evidence and accountable
+          outcomes.
+        </p>
+      </div>
+    </section>
+    <div class="ait-container ait-hero__cta-wrap">
+      <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="ait-btn ait-btn--primary">
+        Talk to an Expert
+      </a>
+    </div>
+  </section>
+
+  <!-- GOVERNANCE AS AN ENGINEERING CONCERN -->
+  <section class="ait-section">
+    <div class="ait-container ait-container--narrow">
+      <h2 class="ait-section__title">Governance as an Engineering Concern</h2>
+      <p class="ait-section__text">
+        AI governance becomes effective when its principles can be translated into testable and
+        observable controls. Policies such as acceptable use, data handling, human oversight and
+        escalation need corresponding evaluation criteria and operational evidence.
+      </p>
+<br>
+      <h2 class="ait-section__title">Define Intent and Risk</h2>
+      <p class="ait-section__text">
+        Every AI capability should have a defined purpose, expected behavior, users, operating boundaries and risk profile. Quality Engineering can translate those expectations into scenarios, evaluations and acceptance thresholds.
+      </p>
+      <img src="assets/images/solution/aigovernece.png"
+           alt="TrustVerse governance controls connected to evaluation and evidence"
+           class="ait-section__image" />
+    </div>
+  </section>
+
+  <!-- GOVERNANCE PILLARS -->
+  <section class="ait-section ait-section--tint">
+    <div class="ait-container">
+      <h2 class="ait-section__title ait-section__title--center">Making Governance Operable</h2>
+      <div class="ait-pillars">
+        <div class="ait-pillars__card" *ngFor="let pillar of governancePillars">
+          <h3 class="ait-pillars__title">{{ pillar.title }}</h3>
+          <p class="ait-pillars__text">{{ pillar.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOVERNANCE ACROSS THE AI LIFECYCLE -->
+  <!-- <section class="ait-section">
+    <div class="ait-container ait-container--narrow">
+      <h2 class="ait-section__title">Governance Across the AI Lifecycle</h2>
+      <p class="ait-section__text">
+        Trust needs to be considered during design, evaluation, deployment, operation and change.
+        Model updates, prompt changes, knowledge-base changes, new tools and new business
+        workflows can alter system behavior and therefore require renewed evaluation.
+      </p>
+    </div>
+  </section> -->
+
+  <!-- FAQS -->
+  <section class="ait-section ait-section--tint">
+    <div class="ait-container ait-container--narrow">
+      <h2 class="ait-section__title ait-section__title--center">Frequently Asked Questions?</h2>
+      <div class="ait-faq">
+        <div class="ait-faq__item" *ngFor="let faq of faqs; let i = index" [class.ait-faq__item--open]="faq.open">
+          <button class="ait-faq__question"
+                  type="button"
+                  (click)="toggleFaq(i)"
+                  [attr.aria-expanded]="faq.open">
+            <span class="ait-faq__question-text">{{ faq.question }}</span>
+            <span class="ait-faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="ait-faq__answer" *ngIf="faq.open">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+      <a class="ait-link" href="#" rel="noopener noreferrer">Guardrails</a>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="ait-cta">
+    <div class="ait-container ait-cta__inner">
+      <h2 class="ait-cta__title">Ready to make your AI governance operable?</h2>
+      <p class="ait-cta__text">Talk to a TrustVerse expert about turning policy into evaluated, evidenced controls.</p>
+      <a class="ait-btn ait-btn--primary ait-btn--light"
+         [href]="expertBookingUrl"
+         target="_blank"
+         rel="noopener noreferrer">
+        Talk to an Expert
+      </a>
+    </div>
+  </section>
+
+</main>

@@ -1,0 +1,198 @@
+.techwix-cta-section-02 .cta-wrap .cta-btn {
+  text-align: center !important;
+}
+
+.logos-img {
+  // width: 100px;
+  height: 60px;
+  display: flex;
+  justify-self: center;
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: auto;
+}
+
+.slide-box {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.techwix-testimonial-section-02 .single-testimonial-02 .testimonial-content {
+  padding: 20px !important;
+}
+
+.feature-sticker {
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+
+.award-sticker-img {
+  width: 120px;
+  height: auto;
+  margin-right: -1rem;
+  margin-top: 3rem;
+}
+
+.techwix-about-section-05 .about-content .title {
+  font-weight: normal;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  // background: linear-gradient(90deg, #fefefe, #ececec);
+  background: var(--tesquirel-card-background);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.p-0 {
+  padding: 0px !important;
+}
+
+@media (min-width: 768px) {
+  #testimonials .swiper-pagination {
+    z-index: 20;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  #testimonials .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    opacity: 0.35 !important;
+    background: #000 !important;
+  }
+  #testimonials .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background: var(--tesquirel-green) !important;
+  }
+
+  #testimonials .swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+    z-index: 10;
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
+    width: 100%;
+  }
+
+  /* Fix Swiper pagination for mobile */
+  #testimonials .swiper-pagination {
+    position: relative !important;
+    bottom: 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  #testimonials .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    background: #333 !important;
+    opacity: 0.3 !important;
+    border-radius: 50% !important;
+    flex: 0 0 auto !important;
+  }
+
+  #testimonials .swiper-pagination-bullet-active {
+    background: #000 !important;
+    opacity: 1 !important;
+  }
+
+  #testimonials .swiper-pagination-bullet-active {
+    background: #000 !important;
+    opacity: 1 !important;
+  }
+}
+
+.testing-strategy-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.product-focused-img {
+  display: flex;
+  justify-content: center;
+}
+
+.product-img-content {
+  margin-top: 0px;
+}
+
+.techwix-service-section-06 .section-title {
+  max-width: 80%;
+}
+
+.solution-suite {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.techwix-about-section-06 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.about-list-wrap {
+  padding-top: 0px;
+}
+
+.techwix-features-section-02 {
+  margin-top: 40px;
+}
+
+.techwix-about-section-06 .about-content-wrap .about-list-wrap {
+  padding-top: 0px;
+}
+
+.cta-appointment {
+  font-size: 24px !important;
+}
+/* 1. Make the columns flex containers so their children can stretch */
+.techwix-service-section-06 .col-xl-3,
+.techwix-service-section-06 .col-sm-6 {
+  display: flex;
+  align-items: stretch;
+}
+
+/* 2. Make the service card fill the full height of the column */
+.techwix-service-section-06 .service-item-05 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Optional: If you want the text content to fill the remaining space evenly */
+.techwix-service-section-06 .service-item-05 .service-content {
+  flex-grow: 1;
+}

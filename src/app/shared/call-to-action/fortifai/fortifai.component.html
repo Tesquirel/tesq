@@ -1,0 +1,185 @@
+<div class="section techwix-about-section-07 section-padding">
+  <div class="container" id="roi-content">
+    <div #roiContent class="roi-container">
+      <header class="roi-header">
+        <h1 class="tesquirel-logo" style="justify-content: center">
+          <span class="T">FortifAI Testing Audit</span>
+        </h1>
+        <p>Evaluate LLMs, RAG, Agents, and AI reliability in 60 seconds</p>
+      </header>
+      <div class="container">
+        <!-- STEP 1: AUDIT -->
+        <form [formGroup]="fortifaiForm">
+          <div class="card" style="background: #3bbb37">
+            <div class="row">
+              <div class="form-group col-md-4 col-sm-12">
+                <label>Full Name</label>
+                <input type="name" formControlName="fullName" />
+              </div>
+
+              <div class="form-group col-md-4 col-sm-12">
+                <label>Email ID</label>
+                <input type="email" formControlName="emailId" />
+                <small
+                  class="text-danger"
+                  *ngIf="fortifaiForm.get('emailId')?.errors?.['notOfficial']"
+                >
+                  Please enter your official valid email id
+                </small>
+              </div>
+
+              <div class="form-group col-md-4 col-sm-12">
+                <label>Company Name</label>
+                <input type="name" formControlName="companyName" />
+              </div>
+            </div>
+          </div>
+          <div formArrayName="questionsArray" class="row">
+            @for (q of questions; track q; let i = $index) {
+              <div class="col-md-6 col-sm-12 mb-3">
+                <div class="card p-3 h-100">
+                  <p>{{ i + 1 }}. {{ q }}</p>
+
+                  <select
+                    class="form-control"
+                    [name]="'question-' + i"
+                    [formControlName]="i"
+                    (change)="updateAnswer($event, i, q)"
+                  >
+                    <option [value]="0">None</option>
+                    <option [value]="1">Basic</option>
+                    <option [value]="2">Moderate</option>
+                    <option [value]="3">Advanced</option>
+                  </select>
+                </div>
+              </div>
+            }
+          </div>
+
+          <button
+            type="button"
+            class="generate-btn"
+            [disabled]="!fortifaiForm.valid"
+            (click)="generateReport()"
+          >
+            Generate Report
+          </button>
+        </form>
+
+        <!-- STEP 3: RESULTS -->
+        <div class="card" [hidden]="!isResult">
+          <h2>AI Testing Score: {{ score }} ({{ level }})</h2>
+
+          <h3>
+            Industry Benchmark: {{ benchmark }} | You are {{ benchmarkDiff }}
+          </h3>
+
+          <!-- Chart placeholder -->
+          <!-- <canvas id="chart"></canvas> -->
+          <div class="chart-card" style="min-height: 400px">
+            <canvas #fortifaiChart></canvas>
+          </div>
+
+          <h3>Key Recommendations</h3>
+          <ul>
+            <li *ngFor="let r of recommendations">{{ r }}</li>
+          </ul>
+
+          <button class="generate-btn" (click)="downloadPDF()">
+            Download PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PDF LAYOUT (hidden in UI) -->
+<div class="pdf-render-container" [hidden]="!showPdfLayout">
+  <div #pdfLayout id="pdfLayout" class="pdf-layout">
+    <header class="roi-header">
+      <div class="header-logo">
+        <img src="assets/images/logo/TQ-logo.png" alt="TesQuirel Solutions" />
+        <span class="tesquirel-logo">
+          <span class="T">Tes</span>
+          <span class="QUIREL">Quirel</span>&nbsp;
+          <span class="T">Solutions</span>
+        </span>
+      </div>
+      <div class="header-logo">
+        <span class="tesquirel-logo">
+          <span class="T">FortifAI Testing Audit</span>
+        </span>
+      </div>
+      <h4>Evaluate LLMs, RAG, Agents, and AI reliability in 60 seconds</h4>
+    </header>
+
+    <div class="qa-section">
+      <!-- <h2>Responses</h2> -->
+      <table
+        class="table table-striped table-hover table-striped-columns table-bordered"
+      >
+        <thead>
+          <tr>
+            <th style="width: 70%">Question</th>
+            <th style="width: 30%">Answer</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (qa of questionsAnswers; track $index; let i = $index) {
+            <tr>
+              <td>{{ i + 1 }}. {{ qa.question }}</td>
+              <td>
+                <span
+                  class="badge"
+                  [ngClass]="{
+                    'bg-secondary': qa.answer === 'None',
+                    'bg-primary': qa.answer === 'Basic',
+                    'bg-warning': qa.answer === 'Moderate',
+                    'bg-success': qa.answer === 'Advanced',
+                  }"
+                >
+                  {{ qa.answer }}
+                </span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <table
+        class="table table-striped table-hover table-striped-columns table-bordered"
+      >
+        <thead>
+          <tr>
+            <th>FULL Name</th>
+            <th>Email ID</th>
+            <th>Company Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ fortifaiForm.value.fullName }}</td>
+            <td>{{ fortifaiForm.value.emailId }}</td>
+            <td>{{ fortifaiForm.value.companyName }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>AI Testing Score: {{ score }} ({{ level }})</h2>
+
+      <h3>Industry Benchmark: {{ benchmark }} | You are {{ benchmarkDiff }}</h3>
+
+      <div class="chart-section">
+        <h2>Industry Benchmark</h2>
+        <img *ngIf="chartImage" [src]="chartImage" style="width: 100%" />
+      </div>
+
+      <h3>Key Recommendations</h3>
+      <ul>
+        <li *ngFor="let r of recommendations">{{ r }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

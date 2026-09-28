@@ -1,0 +1,128 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "TesQuirel-Website": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/tes-quirel-website",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss",
+              "src/assets/css/plugins/all.min.css",
+              "src/assets/css/plugins/flaticon.css",
+              "src/assets/css/plugins/bootstrap.min.css",
+              "src/assets/css/plugins/aos.css",
+              "src/assets/css/plugins/magnific-popup.css",
+              "src/assets/css/style.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "node_modules/swiper/swiper-bundle.min.css"
+            ],
+            "scripts": [
+              "src/assets/js/vendor/jquery-1.12.4.min.js",
+              "src/assets/js/vendor/modernizr-3.11.2.min.js",
+              "src/assets/js/plugins/popper.min.js",
+              "src/assets/js/plugins/bootstrap.min.js",
+              "src/assets/js/plugins/aos.js",
+              "src/assets/js/plugins/waypoints.min.js",
+              "src/assets/js/plugins/back-to-top.js",
+              "src/assets/js/plugins/jquery.counterup.min.js",
+              "src/assets/js/plugins/appear.min.js",
+              "src/assets/js/plugins/jquery.magnific-popup.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2MB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "TesQuirel-Website:build:production"
+            },
+            "development": {
+              "buildTarget": "TesQuirel-Website:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}

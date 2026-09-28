@@ -1,0 +1,72 @@
+<!-- Team Start -->
+<div
+  class="section techwix-team-section techwix-team-section-02 section-padding padding-top-bottom"
+  style="background-image: url(assets/images/bg/team-bg1.jpg)"
+>
+  <div class="container">
+    <!-- Team Wrap Start -->
+    <div class="team-wrap">
+      <div class="section-title text-center">
+        <h3 class="sub-title">Our Founding Catalysts</h3>
+        <h2 class="title white">
+          When testing slowed teams down, we stepped in
+        </h2>
+      </div>
+      <!-- Team Content Wrap Start -->
+      <div class="team-content-wrap row">
+        @for(team of teamList; track team){
+        <div class="col-lg-4 col-sm-6 team-active">
+          <!-- Single Team Start -->
+          <div class="single-team">
+            <div class="team-img">
+              <span
+                ><img
+                  src="{{ team.pic }}"
+                  alt="{{ team.firstName }}"
+                  class="team-img-src"
+              /></span>
+            </div>
+            <div class="team-content">
+              <h3 class="name">
+                <span
+                  >{{ team.firstName }} <br />
+                  {{ team.lastName }}</span
+                >
+              </h3>
+              <span class="designation">{{ team.designation }}</span>
+              <div class="team-social">
+                <ul class="social">
+                  <!-- <li>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      </li> -->
+                  @if(team.twitter){
+                  <li>
+                    <a href="{{ team.twitter }}" target="_blank"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </li>
+                  }
+                  <!-- <li>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                      </li> -->
+                  @if(team.linkedIn){
+                  <li>
+                    <a href="{{ team.linkedIn }}" target="_blank"
+                      ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                  </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Single Team End -->
+        </div>
+        }
+      </div>
+      <!-- Team Content Wrap End -->
+    </div>
+    <!-- Team Wrap End -->
+  </div>
+</div>
+<!-- Team End -->

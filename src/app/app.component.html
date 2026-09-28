@@ -1,0 +1,505 @@
+<div class="main-wrapper">
+  <!-- Preloader start -->
+  <!-- <div id="preloader">
+    <div class="preloader">
+      <span></span>
+      <span></span>
+    </div>
+  </div> -->
+  <!-- Preloader End -->
+
+  <!-- Header Start  -->
+  <div id="header" class="section header-section header-section-05">
+    <div class="container">
+      <!-- Header Wrap Start  -->
+      <div class="header-wrap">
+        <div class="header-logo">
+          <a [routerLink]="'/home'">
+            <img src="assets/images/logo/TQ-logo.png" alt="TesQuirel Solutions" />
+          </a>
+
+          <span class="tesquirel-logo">
+            <span class="T">Tes</span>
+            <span class="QUIREL">Quirel</span>&nbsp;
+            <span class="T">Solutions</span>
+          </span>
+        </div>
+
+        <div class="header-menu d-none d-lg-block">
+          <ul class="main-menu">
+            <!-- <li [ngClass]="{ 'active-menu': currentRoute === 'Home' }">
+              <a href="#" [routerLink]="'/home'">Home</a>
+            </li> -->
+            <li [ngClass]="{ 'active-menu': currentRoute === 'Platform' }">
+              <span class="menu-head">Platform</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li><a href="#" [routerLink]="'/Platform/outcomes'">Overview</a></li>
+                <li>
+                  <a href="#" [routerLink]="'/Platform/How-it-works'">How It Work</a>
+                </li>
+                <li><a href="#" [routerLink]="'/Platform/achitecture'">Architecture</a></li>
+                <li>
+                  <a href="#" [routerLink]="'/Platform/key-capabilities'">Key Capailities</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/Platform/platform-overview'">Business Outcomes</a>
+                </li>
+              </ul>
+            </li>
+            <li [ngClass]="{ 'active-menu': currentRoute === 'Products' }">
+              <span class="menu-head">Products</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li><a href="#" [routerLink]="'/products/breez'">Breez</a></li>
+                <li>
+                  <a href="#" [routerLink]="'/products/attest'">&#64;Test</a>
+                </li>
+                <li><a href="#" [routerLink]="'/products/airis'">AIris</a></li>
+                <li>
+                  <a href="#" [routerLink]="'/products/veritai'">VeritAI</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/products/sakhai'">SakhAI</a>
+                </li>
+              </ul>
+            </li>
+            <li [ngClass]="{ 'active-menu': currentRoute === 'Solutions' }">
+              <span class="menu-head">Solutions</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li><a href="#" [routerLink]="'/Solutions/test-Automation'">Test Automation</a></li>
+                <li>
+                  <a href="#" [routerLink]="'/Solutions/regression-Testing'">Regression Testing</a>
+                </li>
+                <li><a href="#" [routerLink]="'/Solutions/uat-automation'">UAT & Business Journey</a></li>
+                <li>
+                  <a href="#" [routerLink]="'/Solutions/mainframe-testing'">Legacy & MainFrame Testing</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/Solutions/api-testing'">API Testing</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'Solutions/mobile-testing'">Mobile Testing</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/Solutions/visual-testing'">visual & UX Testing</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/Solutions/Ai-Testing'">Ai-Testing</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/Solutions/test-management'">Test Management & Traceability</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/Solutions/quality-engineering'">End-to-End Quality Engineering</a>
+                </li>
+              </ul>
+            </li>
+            <li [ngClass]="{ 'active-menu': currentRoute === 'Industries' }">
+              <span class="menu-head">Industries</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li>
+                  <a href="#" [routerLink]="'/industries/insurance'">Insurance</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/industries/health-tech'">Health Tech</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/industries/real-estate'">Real Estate</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/industries/salesforce'">Salesforce</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/industries/bfsi'">Banking & Financial Service</a>
+                </li>
+                <!-- <li>
+                  <a href="#" [routerLink]="'/industries/retail'">Retail</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/industries/manufacturing'">Manufacturing</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/industries/enterprise-software'">Enterprise Software</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/industries/logistics'">Logistic & Transpotation</a>
+                </li> -->
+                <li>
+                  <a href="#" [routerLink]="'/industries/others'">Others</a>
+                </li>
+              </ul>
+            </li>
+            <li [ngClass]="{ 'active-menu': currentRoute === 'About' }">
+              <span class="menu-head">About</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li><a href="#" [routerLink]="'/company'">Our Company</a></li>
+                <!-- <li><a href="#" [routerLink]="'/team'">Our Team</a></li> -->
+                <li><a href="#" [routerLink]="'/contact'">Our Contact</a></li>
+              </ul>
+            </li>
+            <li [ngClass]="{ 'active-menu': currentRoute === 'TrustVerse' }">
+              <span class="menu-head">TrustVerse</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li><a href="#" [routerLink]="'/trustverse-overview'">Overview</a></li>
+                <li><a href="#" [routerLink]="'/app92-percet'">92% Accuarcy Isn't Enough</a></li>
+                <li><a href="#" [routerLink]="'/ai-governance'">AI Trust and Governance</a></li>
+                <li><a href="#" [routerLink]="'/guardrails'">Guardrails</a></li>
+                <li><a href="#" [routerLink]="'/evidence'">Evidence</a></li>
+                <li><a href="#" [routerLink]="'/accountability'">Accountability</a></li>
+                <li><a href="#" [routerLink]="'/agentic-AI'">Agentic AI</a></li>
+                <li><a href="#" [routerLink]="'/framework'">Framework</a></li>
+                <li><a href="#" [routerLink]="'/ai-fitment-evaluatorData'">Framework</a></li>
+              </ul>
+            </li>
+            <!-- <li [ngClass]="{ 'active-menu': currentRoute === 'TrustVerse' }">
+              <a [routerLink]="'/trustverse-overview'">
+                <span class="menu-head">TrustVerse</span>
+                <span class="menu-icon"></span> 
+                <ul class="sub-menu">
+                <li><a href="#" [routerLink]="'/company'">Our Company</a></li>
+                <li><a href="#" [routerLink]="'/team'">Our Team</a></li>
+                <li><a href="#" [routerLink]="'/contact'">Our Contact</a></li>
+              </ul>
+              </a>
+            </li> -->
+            <li [ngClass]="{ 'active-menu': currentRoute === 'Resources' }">
+              <span class="menu-head">Resources</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li><a href="#" [routerLink]="'/blogs'">Blogs</a></li>
+                <li>
+                  <a href="#" [routerLink]="'/success-stories'">Success Stories</a>
+                </li>
+                <li>
+                  <a href="#" [routerLink]="'/Breez_UserGuide'" target="_blank">User Guide</a>
+                </li>
+              </ul>
+            </li>
+            @if (!isLoggedIn) {
+            <!-- <li [ngClass]="{ 'active-menu': currentRoute === 'Login' }">
+              <span class="menu-head">Login</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li>
+                  <a href="https://sertfy.tqdemo.in/#/" target="_blank">Breez Demo Login</a>
+                </li>
+                <li><a href="#" [routerLink]="'/login'">Web Login</a></li>
+              </ul>
+            </li> -->
+            }
+            @if (isLoggedIn) {
+            <li [ngClass]="{ 'active-menu': currentRoute === 'Profile' }">
+              <span class="menu-head">My Account</span>
+              <span class="menu-icon"></span>
+              <ul class="sub-menu">
+                <li><a href="#" [routerLink]="'/blog/add'">Add a Blog</a></li>
+                <li><a href="#" [routerLink]="'/blog/list'">Blog List</a></li>
+                <li><a href="#" (click)="logout()">Logout</a></li>
+              </ul>
+            </li>
+            }
+          </ul>
+        </div>
+        <!-- Header Meta Start -->
+        <div class="header-meta">
+          <!-- Header Toggle Start -->
+          <div class="header-toggle d-lg-none">
+            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+          <!-- Header Toggle End -->
+        </div>
+      </div>
+      <!-- Header Wrap End  -->
+    </div>
+  </div>
+  <!-- Header End -->
+
+  <!-- Offcanvas Start-->
+  <div class="offcanvas offcanvas-start" id="offcanvasExample">
+    <div class="offcanvas-header">
+      <!-- Offcanvas Logo Start -->
+      <div class="offcanvas-logo">
+        <!-- <a href="#" [routerLink]="'/home'"
+          ><img src="assets/images/logo/TQ-logo.png" alt="TesQuirel Solutions"
+        /></a> -->
+        <img src="assets/images/logo/TQ-logo.png" alt="TesQuirel Solutions" />
+        <span class="offcanvas-tesquirel-logo">
+          <span class="T">Tes</span>
+          <span class="QUIREL">Quirel</span>&nbsp;
+          <span class="T">Solutions</span>
+        </span>
+      </div>
+      <!-- Offcanvas Logo End -->
+      <button type="button" class="close-btn" data-bs-dismiss="offcanvas">
+        <i class="flaticon-close"></i>
+      </button>
+    </div>
+
+    <!-- Offcanvas Body Start -->
+    <div class="offcanvas-body">
+      <div class="offcanvas-menu" #menuRef>
+        <ul class="main-menu">
+          <li [ngClass]="{ 'active-menu': currentRoute === 'Home' }">
+            <a href="#" [routerLink]="'/home'">Home</a>
+          </li>
+          <li [ngClass]="{ 'active-menu': currentRoute === 'Products' }">
+            <span class="menu-head canvas">Products</span>
+            <ul class="sub-menu">
+              <li><a href="#" [routerLink]="'/products/breez'">Breez</a></li>
+              <li>
+                <a href="#" [routerLink]="'/products/attest'">&#64;Test</a>
+              </li>
+              <li><a href="#" [routerLink]="'/products/airis'">AIris</a></li>
+              <li>
+                <a href="#" [routerLink]="'/products/veritai'">VeritAI</a>
+              </li>
+              <li><a href="#" [routerLink]="'/products/sakhai'">SakhAI</a></li>
+            </ul>
+          </li>
+          <li [ngClass]="{ 'active-menu': currentRoute === 'Industries' }">
+            <span class="menu-head canvas">Industries</span>
+            <ul class="sub-menu">
+              <li>
+                <a href="#" [routerLink]="'/industries/insurance'">Insurance</a>
+              </li>
+              <li>
+                <a href="#" [routerLink]="'/industries/health-tech'">Health Tech</a>
+              </li>
+              <li>
+                <a href="#" [routerLink]="'/industries/real-estate'">Real Estate</a>
+              </li>
+              <li>
+                <a href="#" [routerLink]="'/industries/salesforce'">Salesforce</a>
+              </li>
+              <li>
+                <a href="#" [routerLink]="'/industries/others'">Others</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{ 'active-menu': currentRoute === 'About' }">
+            <span class="menu-head canvas">About</span>
+            <ul class="sub-menu">
+              <li><a href="#" [routerLink]="'/company'">Our Company</a></li>
+              <!-- <li><a href="#" [routerLink]="'/team'">Our Team</a></li> -->
+              <li><a href="#" [routerLink]="'/contact'">Our Contact</a></li>
+            </ul>
+          </li>
+          <li [ngClass]="{ 'active-menu': currentRoute === 'TrustVerse' }">
+            <span class="menu-head canvas">TrustVerse</span>
+            <span class="menu-icon"></span>
+            <ul class="sub-menu">
+              <li><a href="#" [routerLink]="'/trustverse-overview'">Overview</a></li>
+              <li><a href="#" [routerLink]="'/app92-percet'">92% Accuarcy Isn't Enough</a></li>
+              <li><a href="#" [routerLink]="'/ai-governance'">AI Trust and Governance</a></li>
+              <li><a href="#" [routerLink]="'/guardrails'">Guardrails</a></li>
+              <li><a href="#" [routerLink]="'/evidence'">Evidence</a></li>
+              <li><a href="#" [routerLink]="'/accountability'">Accountability</a></li>
+              <li><a href="#" [routerLink]="'/agentic-AI'">Agentic AI</a></li>
+              <li><a href="#" [routerLink]="'/framework'">Framework</a></li>
+            </ul>
+          </li>
+          <li [ngClass]="{ 'active-menu': currentRoute === 'Resources' }">
+            <span class="menu-head canvas">Resources</span>
+            <ul class="sub-menu">
+              <li><a href="#" [routerLink]="'/blogs'">Blogs</a></li>
+              <li>
+                <a href="#" [routerLink]="'/success-stories'">Success Stories</a>
+              </li>
+            </ul>
+          </li>
+          @if (!isLoggedIn) {
+          <!-- <li [ngClass]="{ 'active-menu': currentRoute === 'Login' }">
+            <span class="menu-head canvas">Login</span>
+            <span class="menu-icon"></span>
+            <ul class="sub-menu">
+              <li>
+                <a href="https://sertfy.tqdemo.in/#/" target="_blank">Breez Demo Login</a>
+              </li>
+              <li><a href="#" [routerLink]="'/login'">Web Login</a></li>
+            </ul>
+          </li> -->
+          }
+          @if (isLoggedIn) {
+          <li [ngClass]="{ 'active-menu': currentRoute === 'Profile' }">
+            <span class="menu-head canvas">My Account</span>
+            <span class="menu-icon"></span>
+            <ul class="sub-menu">
+              <li><a href="#" [routerLink]="'/blog/add'">Add a Blog</a></li>
+              <li><a href="#" [routerLink]="'/blog/list'">Blog List</a></li>
+              <li><a href="#" (click)="logout()">Logout</a></li>
+            </ul>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+    <!-- Offcanvas Body End -->
+  </div>
+  <!-- Offcanvas End -->
+  <router-outlet />
+  <!-- Footer Section Start -->
+  <div class="section footer-section" style="background-image: url(assets/images/bg/footer-bg.jpg)">
+    <div class="container">
+      <!-- Footer Widget Wrap Start -->
+      <div class="footer-widget-wrap">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <!-- Footer Widget Start -->
+            <div class="footer-widget-about">
+              <a class="footer-logo" href="#" [routerLink]="'/home'"><img src="assets/images/logo/TQ-logo.png"
+                  alt="Logo" class="footer-logo" /></a>
+              <p>The idea of TesQuirel was envisaged and initiated in 2018.</p>
+              <div class="footer-social">
+                <ul class="social">
+                  <li>
+                    <a href="https://www.facebook.com/TesQuirel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://x.com/TesquirelS" target="_blank"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/company/tesquirel-solutions" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Footer Widget End -->
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <!-- Footer Widget Start -->
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Useful Links</h4>
+
+              <div class="widget-link">
+                <ul class="link">
+                  <li>
+                    <a href="#" [routerLink]="'/privacy-policy'">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#" [routerLink]="'/terms-and-conditions'">Terms & Conditions</a>
+                  </li>
+                  <li><a [routerLink]="'/company'">About Company</a></li>
+                  <!-- <li><a href="#">Payment Gatway</a></li> -->
+                  <!-- <li><a [routerLink]="'/terms-and-conditions'">Policy</a></li> -->
+                </ul>
+              </div>
+            </div>
+            <!-- Footer Widget End -->
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <!-- Footer Widget Start -->
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Our Products</h4>
+
+              <div class="widget-link">
+                <ul class="link">
+                  <li><a [routerLink]="'/products/breez'">Breez</a></li>
+                  <li><a [routerLink]="'/products/attest'">&#64;Test</a></li>
+                  <li><a [routerLink]="'/products/airis'">AIris</a></li>
+                  <li><a [routerLink]="'/products/veritai'">VeritAI</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- Footer Widget End -->
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <!-- Footer Widget Start -->
+            <div class="footer-widget">
+              <h4 class="footer-widget-title">Contact Information</h4>
+
+              <div class="widget-info">
+                <ul>
+                  <li>
+                    <div class="info-icon">
+                      <i class="flaticon-phone-call"></i>
+                    </div>
+                    <div class="info-text">
+                      <span><span>+91 86522 21943</span></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-icon">
+                      <i class="far fa-envelope-open"></i>
+                    </div>
+                    <div class="info-text">
+                      <span><span>connect&#64;tesquirel.com</span></span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info-icon">
+                      <i class="flaticon-pin"></i>
+                    </div>
+                    <div class="info-text">
+                      <span>#66, 2nd Floor, Ittamadu, Banashankari 3rd Stage,
+                        Bengaluru-85</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Footer Widget End -->
+          </div>
+        </div>
+      </div>
+      <!-- Footer Widget Wrap End -->
+    </div>
+
+    <!-- Footer Copyright Start -->
+    <div class="footer-copyright-area">
+      <div class="container">
+        <div class="footer-copyright-wrap">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <!-- Footer Copyright Text Start -->
+              <div class="copyright-text text-center">
+                <p>
+                  &copy; 2018-{{ currentYear }} TesQuirel Solutions. All rights
+                  reserved.
+                </p>
+              </div>
+              <!-- Footer Copyright Text End -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Copyright End -->
+  </div>
+  <!-- Footer Section End -->
+
+  <!-- back to top start -->
+  <!-- <div class="progress-wrap">
+    <svg
+      class="progress-circle svg-content"
+      width="100%"
+      height="100%"
+      viewBox="-1 -1 102 102"
+    >
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div> -->
+  <!-- back to top end -->
+
+  <!-- Theme Switch Button -->
+  <!-- <div class="switch" [class.switched]="isLight" (click)="toggleTheme()">
+    <span class="toggle-icon">{{ isLight ? "🌞" : "🌙" }}</span>
+  </div> -->
+
+  <!-- Scroll Progress Circle -->
+  <div class="progress-wrap" [class.active-progress]="scrollProgress > 5" (click)="scrollToTop()">
+    <svg class="progress-circle" width="46" height="46" viewBox="0 0 60 60">
+      <path d="M30 2 a28 28 0 1 1 0 56 a28 28 0 1 1 0 -56" stroke="#00aaff" stroke-width="4" fill="none"
+        [attr.stroke-dasharray]="176" [attr.stroke-dashoffset]="176 - (176 * scrollProgress) / 100" />
+    </svg>
+  </div>
+</div>

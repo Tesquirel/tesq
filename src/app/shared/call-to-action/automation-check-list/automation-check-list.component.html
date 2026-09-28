@@ -1,0 +1,78 @@
+<div
+  class="section techwix-about-section-07 section-padding padding-top-bottom"
+>
+  <div class="container" id="roi-content">
+    <div class="container">
+      <h1>The Selenium Sanity Audit</h1>
+
+      <p class="subtext">
+        Is Your Automation Suite Slowing You Down?<br />
+        Use this 60-second checklist to evaluate your automation maturity.
+      </p>
+
+      <form>
+        <div *ngFor="let q of questions; let i = index" class="question">
+          <h3>{{ i + 1 }}. {{ q }}</h3>
+
+          <div class="options">
+            <label *ngFor="let opt of options">
+              <input
+                type="radio"
+                [name]="'q' + i"
+                [value]="opt.score"
+                (change)="updateAnswer(i, opt.score)"
+              />
+
+              {{ opt.text }}
+            </label>
+          </div>
+        </div>
+
+        <button type="button" (click)="submitAudit()">
+          Calculate My Automation Score
+        </button>
+      </form>
+
+      <div *ngIf="showEmailBox" class="email-box">
+        <h3>See Your Full Automation Health Report</h3>
+
+        <p>Enter your email to unlock your results</p>
+
+        <input
+          type="email"
+          [(ngModel)]="email"
+          placeholder="Enter work email"
+          name="email"
+        />
+
+        <button (click)="showResults()">View Results</button>
+      </div>
+
+      <div *ngIf="showResult" class="result">
+        <h2>Automation Health Score: {{ totalScore }} / 20</h2>
+
+        <h3>{{ stage }}</h3>
+
+        <div class="chart-container">
+          <canvas #radarChart></canvas>
+        </div>
+
+        <div class="benchmark">
+          <h3>Industry Benchmark Comparison</h3>
+
+          <p>{{ benchmarkText }}</p>
+        </div>
+
+        <h3>Recommended Next Steps</h3>
+
+        <ul>
+          <li *ngFor="let r of recommendations">{{ r }}</li>
+        </ul>
+
+        <button class="download" (click)="downloadPDF()">
+          Download Full PDF Report
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

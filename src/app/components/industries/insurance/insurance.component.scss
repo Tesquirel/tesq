@@ -1,0 +1,77 @@
+.tesquirel-hero-content {
+  font-size: 1.6rem;
+  color: var(--tesquirel-white);
+  margin-top: 1rem;
+}
+
+// .service-list {
+//   display: flex;
+//   align-items: flex-start;
+//   font-size: 16px;
+//   line-height: 24px;
+//   color: #333333;
+//   margin-top: 20px;
+// }
+
+// .service-list ul li {
+//   color: #11ddf5;
+//   margin-right: 8px;
+// }
+
+table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.industry-platform-coverage {
+  padding-right: 0px;
+}
+
+.industry-platform-coverage-list {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.fp-icon {
+  color: #11ddf5;
+  margin-right: 8px;
+}
+
+.techwix-hero-section-03 {
+  height: 100vh;
+}
+
+.techwix-hero-section-03 .shape-1 {
+  top: -50%;
+}
+
+.techwix-hero-section-03 .hero-content .title {
+  font-size: 60px;
+}
+
+.banner-text {
+  position: absolute;
+  top: 10%;
+  left: 0%;
+}
+
+.techwix-service-section-03 {
+  padding-bottom: 30px;
+}
+
+.hero-description {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

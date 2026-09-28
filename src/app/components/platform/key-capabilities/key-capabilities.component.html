@@ -1,0 +1,244 @@
+<main class="capabilities-page">
+
+  <!-- ============ HERO (IMAGE ONLY) ============ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__media">
+        <br>
+        <br>
+        <img
+          src="assets/images/platform/keycapabilityhero.png"
+          alt="TesQuirel Platform Capabilities"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTRO / PRINCIPLE ============ -->
+    <!-- <section class="section principle">
+    <div class="section__inner narrow">
+      <h2>Everything Teams Need to Engineer Quality at Scale</h2>
+      <p>
+        From understanding requirements to automating execution and interpreting results,
+        TesQuirel connects the capabilities required to validate complex enterprise
+        applications and business journeys.
+      </p>
+      <div class="principle__cta">
+        <a routerLink="/products" class="btn btn--primary">
+          Explore Products
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+      <ul class="principle__stats">
+        <li *ngFor="let outcome of businessOutcomes">
+          <div class="principle__stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ng-container [ngSwitch]="outcome.icon">
+                <ng-container *ngSwitchCase="'rocket'">
+                  <path d="M12 2c2.5 2 4 5 4 8 0 2-1 4-2 5l-2 2-2-2c-1-1-2-3-2-5 0-3 1.5-6 4-8Z" />
+                  <path d="M9 15l-3 3 1 3 3-1" />
+                  <path d="M15 15l3 3-1 3-3-1" />
+                  <circle cx="12" cy="10" r="1.5" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'shield'">
+                  <path d="M12 3 4 6v6c0 4.5 3.2 7.7 8 9 4.8-1.3 8-4.5 8-9V6l-8-3Z" />
+                  <path d="m9 12 2 2 4-4" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'chart'">
+                  <path d="M4 20V10" />
+                  <path d="M11 20V4" />
+                  <path d="M18 20v-7" />
+                  <path d="M2 20h20" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'users'">
+                  <circle cx="9" cy="8" r="3" />
+                  <path d="M2 20c0-3.3 3-6 7-6s7 2.7 7 6" />
+                  <circle cx="17" cy="9" r="2.4" />
+                  <path d="M22 20c0-2.6-2-4.8-4.6-5.4" />
+                </ng-container>
+              </ng-container>
+            </svg>
+          </div>
+          <span>{{ outcome.label }}</span>
+        </li>
+      </ul>
+    </div>
+  </section> -->
+
+  <!-- ============ CAPABILITIES GRID ============ -->
+  <section class="section capabilities-section">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Connected Capabilities</h2>
+        <!-- <p>One platform. Any application. End-to-end quality for complex and hybrid landscapes.</p> -->
+      </div>
+
+      <div class="capabilities__grid">
+        <div *ngFor="let cap of capabilities; let i = index" 
+             class="capability-card"
+             [ngClass]="[
+               cap.productKey ? 'capability-card--' + cap.productKey : '',
+               isVisible(i) ? 'capability-card--visible' : ''
+             ]">
+          <div class="capability-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ng-container [ngSwitch]="cap.icon">
+                <ng-container *ngSwitchCase="'brain'">
+                  <path d="M9 4a3 3 0 0 0-3 3v.3A3.5 3.5 0 0 0 5 14a3.5 3.5 0 0 0 3.5 3.5H9V4Z" />
+                  <path d="M15 4a3 3 0 0 1 3 3v.3A3.5 3.5 0 0 1 19 14a3.5 3.5 0 0 1-3.5 3.5H15V4Z" />
+                  <path d="M9 8h6M9 12h6" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'doc'">
+                  <path d="M7 3h7l4 4v14H7Z" />
+                  <path d="M14 3v4h4" />
+                  <path d="M9.5 12h5M9.5 15.5h5" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'gear'">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M19.4 13.5a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.9 2.9l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V20a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.9-2.9l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H4a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.9-2.9l.1.1a1.7 1.7 0 0 0 1.9.3H10a1.7 1.7 0 0 0 1-1.6V4a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.9 2.9l-.1.1a1.7 1.7 0 0 0-.3 1.9V10a1.7 1.7 0 0 0 1.6 1H20a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1Z" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'api'">
+                  <rect x="3" y="9" width="6" height="6" rx="1" />
+                  <rect x="15" y="9" width="6" height="6" rx="1" />
+                  <path d="M9 12h6" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'mobile'">
+                  <rect x="7" y="2" width="10" height="20" rx="2" />
+                  <path d="M11 18h2" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'server'">
+                  <rect x="3" y="4" width="18" height="6" rx="1.2" />
+                  <rect x="3" y="14" width="18" height="6" rx="1.2" />
+                  <path d="M7 7h.01M7 17h.01" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'eye'">
+                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'insight'">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m21 21-4.3-4.3" />
+                  <path d="M8.5 11h5M11 8.5v5" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'evidence'">
+                  <path d="M6 3h9l3 3v15H6Z" />
+                  <path d="M15 3v3h3" />
+                  <path d="M9 12h6M9 16h6M9 8h2" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'target'">
+                  <circle cx="12" cy="12" r="8" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="12" cy="12" r=".6" fill="currentColor" />
+                </ng-container>
+              </ng-container>
+            </svg>
+          </div>
+          <h3>{{ cap.title }}</h3>
+          <p>{{ cap.description }}</p>
+          <a *ngIf="cap.productPath" [routerLink]="cap.productPath" class="capability-card__link" [ngClass]="'capability-card__link--' + cap.productKey">
+            {{ cap.product }}
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONNECTED PLATFORM DIAGRAM ============ -->
+  <section class="section connected">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Designed to Work Together</h2>
+        <!-- <p>The strongest value appears when capabilities are connected.</p> -->
+      </div>
+
+      <img src="assets/images/platform/keycapability1.png" alt="TesQuirel Connected Capabilities" class="connected__figure" loading="lazy" />
+
+      <p class="connected__summary">
+        A requirement can become a test scenario; a scenario can become an automated journey;
+        execution can generate evidence; visual validation can add experience-level checks;
+        and execution intelligence can help explain the outcome.This is the distinction between a collection of testing tools and a Quality Engineering platform.
+      </p>
+      <!-- <p class="connected__summary">
+        This is the distinction between a collection of testing tools and a Quality Engineering platform.
+      </p> -->
+    </div>
+  </section>
+
+  <!-- ============ APPLICATION LANDSCAPE ============ -->
+  <section class="section landscape">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Capability Coverage by Application Landscape</h2>
+        <!-- <p>One platform. Any application. End-to-end quality for complex and hybrid landscapes.</p> -->
+      </div>
+
+      <ul class="landscape__grid">
+        <li *ngFor="let item of applicationLandscapes; let i = index" 
+            class="landscape-card"
+            [class.landscape-card--visible]="isVisible(i + 10)">
+          <div class="landscape-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ng-container [ngSwitch]="item.icon">
+                <ng-container *ngSwitchCase="'monitor'">
+                  <rect x="3" y="4" width="18" height="12" rx="1.5" />
+                  <path d="M8 20h8M12 16v4" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'mobile'">
+                  <rect x="7" y="2" width="10" height="20" rx="2" />
+                  <path d="M11 18h2" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'api'">
+                  <rect x="3" y="9" width="6" height="6" rx="1" />
+                  <rect x="15" y="9" width="6" height="6" rx="1" />
+                  <path d="M9 12h6" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'server'">
+                  <rect x="3" y="4" width="18" height="6" rx="1.2" />
+                  <rect x="3" y="14" width="18" height="6" rx="1.2" />
+                  <path d="M7 7h.01M7 17h.01" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'hybrid'">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'cloud'">
+                  <path d="M7 18a4 4 0 0 1-.5-7.97A5 5 0 0 1 16.9 9 4 4 0 0 1 17 18H7Z" />
+                </ng-container>
+              </ng-container>
+            </svg>
+          </div>
+          <h3>{{ item.label }}</h3>
+          <p>{{ item.desc }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq">
+    <div class="section__inner narrow">
+      <div class="section__heading">
+        <h2>Frequently Asked Questions?</h2>
+      </div>
+
+      <ul class="faq__list">
+        <li *ngFor="let item of faqs; let i = index" class="faq__item" [class.faq__item--open]="isFaqOpen(i)">
+          <button type="button" class="faq__question" [attr.aria-expanded]="isFaqOpen(i)" (click)="toggleFaq(i)">
+            {{ item.question }}
+            <svg class="faq__chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <p *ngIf="isFaqOpen(i)" class="faq__answer">{{ item.answer }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>

@@ -1,0 +1,26 @@
+.techwix-choose-us-section-02
+  .choose-us-right
+  .faq-accordion
+  .accordion-item
+  .accordion-button
+  .title {
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .techwix-choose-us-section-02
+    .choose-us-right
+    .faq-accordion
+    .accordion-item
+    .accordion-button::after {
+    right: 10px;
+  }
+
+  .techwix-choose-us-section-02
+    .choose-us-right
+    .faq-accordion
+    .accordion-item
+    .accordion-button {
+    padding: 25px 50px;
+  }
+}

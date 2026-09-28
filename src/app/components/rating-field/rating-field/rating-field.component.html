@@ -1,0 +1,37 @@
+<div class="rating-field" [class.disabled]="disabled">
+  <div class="question-row">
+    <div class="question-text">{{ questionText }}</div>
+    <div class="rating-meta">
+      <span class="dimension" *ngIf="dimension">{{ dimension }}</span>
+      <span class="weightage" *ngIf="weightage">Weight: {{ weightage * 100 }}%</span>
+    </div>
+  </div>
+  
+  <div class="rating-buttons">
+    <button
+      *ngFor="let rating of ratings"
+      type="button"
+      class="rating-btn"
+      [class.selected]="value === rating"
+      [class.hover]="hoverValue === rating"
+      [attr.data-rating]="rating"
+      (click)="selectRating(rating)"
+      (mouseenter)="onHover(rating)"
+      (mouseleave)="onHover(null)"
+      [disabled]="disabled"
+      [title]="getRatingDescription(rating)"
+    >
+      {{ rating }}
+    </button>
+  </div>
+  
+  <div class="rating-labels">
+    <span 
+      *ngFor="let rating of ratings" 
+      class="rating-label"
+      [class.active]="value === rating || hoverValue === rating"
+    >
+      {{ getRatingLabel(rating) }}
+    </span>
+  </div>
+</div>

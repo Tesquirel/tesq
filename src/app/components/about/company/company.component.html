@@ -1,0 +1,449 @@
+<!-- ============================================================
+     COMPANY PAGE – TesQuirel
+     Sticky sub-nav sits right below the site header (no overlap)
+     All 9 sections always visible • Sub-nav smooth-scrolls
+     ============================================================ -->
+
+<!-- ================= HERO BANNER ================= -->
+<section class="company-banner">
+  <div class="banner-overlay"></div>
+  <img class="banner-bg" src="assets/images/our company/ourcompany.png" alt="TesQuirel AI Quality Engineering" />
+
+  <div class="container banner-content">
+    <span class="banner-sub">Our Company</span>
+    <h1 class="banner-title">Engineering Confidence into Every Release</h1>
+    <p class="banner-text">
+      Software quality is no longer limited to validating whether an
+      application works. Enterprise applications now span web, mobile,
+      APIs, cloud platforms, legacy systems, AS/400, mainframe environments
+      and AI-enabled workflows.
+    </p>
+    <p class="banner-text">
+      <strong>TesQuirel helps enterprises engineer quality across this complexity.</strong>
+    </p>
+    <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="tsq-btn"> Talk to an Expert <i
+        class="fas fa-arrow-right"></i></a>
+    <!-- <a class="tsq-btn" [href]="calendly" target="_blank" rel="noopener">
+      Talk to an Expert <i class="fas fa-arrow-right"></i>
+    </a> -->
+  </div>
+</section>
+
+<!-- ================= SOCIAL STRIP ================= -->
+<div class="social-strip">
+  <div class="container social-strip-inner">
+    <span class="social-label">Follow TesQuirel</span>
+    <div class="social-media">
+      <a href="https://www.linkedin.com/company/tesquirel-solutions/" target="_blank" rel="noopener"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://x.com/TesquirelS" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a>
+      <a href="https://www.facebook.com/TesQuirel/" target="_blank" rel="noopener"><i
+          class="fab fa-facebook-square"></i></a>
+      <a href="https://www.instagram.com/tesquirel_solutions/" target="_blank" rel="noopener"><i
+          class="fab fa-instagram-square"></i></a>
+      <a href="https://www.youtube.com/@tesquirelsolutions9594" target="_blank" rel="noopener"><i
+          class="fab fa-youtube-square"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= STICKY SUB-NAV ================= -->
+<div class="company-subnav" id="companySubnav">
+  <div class="container">
+    <ul class="nav-list">
+      @for (item of sections; track item.id) {
+      <li>
+        <a [href]="'#' + item.id" [class.active]="activeSection === item.id" (click)="scrollTo(item.id, $event)">
+          {{ item.label }}
+        </a>
+      </li>
+      }
+    </ul>
+  </div>
+</div>
+
+<!-- ================= ALL SECTIONS ================= -->
+<div class="company-section">
+  <div class="container">
+
+    <!-- ========== 1. OVERVIEW ========== -->
+    <section id="overview" class="company-panel">
+      <div class="panel-head">
+        <span class="sub-title">Overview</span>
+        <h2 class="title">Quality Engineering for Modern, Legacy &amp; Hybrid Applications</h2>
+        <p class="lead">
+          Enterprise testing becomes difficult when business complexity grows
+          faster than testing capability. TesQuirel brings intelligence and
+          automation into the broader Quality Engineering lifecycle — not simply
+          to create more automated tests, but to help teams understand business
+          intent, identify meaningful test scenarios and make better-informed
+          release decisions.
+        </p>
+      </div>
+
+      <div class="panel-image">
+        <img src="assets/images/our company/ourcompany.png" alt="TesQuirel AI Quality Engineering platform" />
+      </div>
+
+      <div class="pillar-strip">
+        @for (pillar of pillars; track pillar.title) {
+        <div class="pillar-item">
+          <i class="{{ pillar.icon }}"></i>
+          <h4>{{ pillar.title }}</h4>
+          <p>{{ pillar.text }}</p>
+        </div>
+        }
+      </div>
+
+      <div class="panel-cta">
+        <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="tsq-btn"> Talk to an Expert <i
+        class="fas fa-arrow-right"></i></a>
+        <!-- <a class="tsq-btn" [href]="calendly" target="_blank" rel="noopener">
+          Talk to an Expert <i class="fas fa-arrow-right"></i>
+        </a> -->
+      </div>
+    </section>
+
+    <!-- ========== 2. OUR STORY ========== -->
+    <section id="story" class="company-panel">
+      <div class="panel-head">
+        <span class="sub-title">Our Story</span>
+        <h2 class="title">From Testing Applications to Engineering Quality</h2>
+        <p class="lead">
+          TesQuirel has evolved around a simple observation:
+          <strong>enterprise testing becomes difficult when business complexity
+            grows faster than testing capability.</strong>
+        </p>
+        <p class="lead">
+          Traditional testing approaches often depend either on large manual
+          teams or on scripting expertise, disconnected tools and repetitive
+          execution. These challenges become more pronounced when modern
+          applications coexist with established enterprise and legacy systems.
+        </p>
+        <p class="lead">
+          TesQuirel's approach is to bring intelligence and automation into the
+          broader Quality Engineering lifecycle. The objective is not simply to
+          create more automated tests.
+        </p>
+        <p class="lead"><strong>It is to help teams:</strong></p>
+      </div>
+
+      <ul class="company-check-list two-col">
+        @for (point of storyPoints; track point) {
+        <li><i class="fas fa-check-circle"></i> {{ point }}</li>
+        }
+      </ul>
+
+      <p class="lead text-center">
+        This philosophy continues to shape the TesQuirel platform and its products.
+      </p>
+
+      <!-- <div class="panel-image">
+        <img src="assets/images/our company/ourcompany2.png"
+             alt="TesQuirel Quality Engineering" />
+      </div> -->
+    </section>
+
+    <!-- ========== 3. WHAT WE BUILD ========== -->
+    <section id="what-we-build" class="company-panel">
+      <div class="panel-head text-center">
+        <span class="sub-title">What We Build</span>
+        <h2 class="title">An AI-Powered Quality Engineering Platform</h2>
+        <p class="lead max-700">
+          TesQuirel brings multiple quality capabilities together rather than
+          treating testing as a collection of isolated activities.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        @for (cap of capabilities; track cap.title) {
+        <div class="col-lg-4 col-md-6">
+          <div class="cap-card">
+            <div class="cap-icon"><i class="{{ cap.icon }}"></i></div>
+            <h4 class="cap-title">{{ cap.title }}</h4>
+            <p class="cap-text">{{ cap.text }}</p>
+          </div>
+        </div>
+        }
+      </div>
+
+      <!-- <div class="panel-image">
+        <img src="assets/images/our company/ourcompany1.png"
+             alt="TesQuirel Quality Engineering Platform" />
+      </div> -->
+    </section>
+
+    <!-- ========== 4. OUR CUSTOMERS ========== -->
+    <section id="customers" class="company-panel">
+      <div class="panel-head text-center">
+        <span class="sub-title">Our Customers</span>
+        <h2 class="title">Quality Engineering for Complex Enterprise Landscapes</h2>
+        <p class="lead max-700">
+          TesQuirel is designed for organizations where applications,
+          integrations and business processes span multiple technologies.
+        </p>
+      </div>
+
+      <h4 class="block-title">Industries we focus on</h4>
+      <div class="industry-chips center">
+        @for (industry of industries; track industry) {
+        <span class="chip">{{ industry }}</span>
+        }
+      </div>
+
+      <h4 class="block-title">Typical application landscapes</h4>
+      <div class="landscape-flow center">
+        @for (layer of landscape; track layer; let last = $last) {
+        <span class="flow-item">{{ layer }}</span>
+        @if (!last) { <i class="fas fa-arrow-right flow-arrow"></i> }
+        }
+      </div>
+
+      <p class="lead text-center max-800">
+        This makes TesQuirel particularly relevant where organizations need to
+        modernize their testing approach without replacing established
+        applications and systems.
+      </p>
+
+      <!-- <div class="panel-image">
+        <img src="assets/images/our company/ourcompany.png"
+             alt="Enterprise application landscape" />
+      </div> -->
+
+      <div class="evidence-box">
+        <h4 class="block-title">Customer Evidence</h4>
+        <p class="lead">
+          TesQuirel's customer engagements include complex enterprise
+          environments involving insurance applications, AS/400 systems,
+          customer onboarding, servicing, claims and large-scale regression
+          testing.
+        </p>
+        <p class="lead">
+          Where customer results are published, TesQuirel presents them as
+          specific customer evidence rather than universal performance claims.
+        </p>
+      </div>
+
+      <div class="panel-cta">
+        <a class="tsq-btn" routerLink="/case-studies">
+          Explore Customer Stories <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== 5. LEADERSHIP ========== -->
+    <section id="leadership" class="company-panel">
+      <div class="panel-head text-center">
+        <span class="sub-title">Leadership</span>
+        <h2 class="title">Building Quality Engineering for the AI Era</h2>
+        <p class="lead max-700">
+          TesQuirel is led by a team focused on the intersection of:
+        </p>
+      </div>
+
+      <div class="industry-chips center">
+        @for (focus of leadershipFocus; track focus) {
+        <span class="chip">{{ focus }}</span>
+        }
+      </div>
+
+      <p class="leadership-principle text-center max-800">
+        <i class="fas fa-quote-left"></i>
+        Technology should reduce complexity, not move complexity from one team
+        to another.
+      </p>
+
+      <div class="row g-4">
+        @for (leader of leadership; track leader.name) {
+        <div class="col-lg-4 col-md-6">
+          <div class="leader-card">
+            <div class="leader-img">
+              <img src="{{ leader.pic }}" alt="{{ leader.name }}" />
+            </div>
+            <div class="leader-body">
+              <h4 class="leader-name">{{ leader.name }}</h4>
+              <span class="leader-role">{{ leader.role }}</span>
+              <p class="leader-text">{{ leader.text }}</p>
+              @if (leader.linkedIn) {
+              <a class="leader-link" href="{{ leader.linkedIn }}" target="_blank" rel="noopener">
+                <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
+              </a>
+              }
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </section>
+
+    <!-- ========== 6. TRUST & SECURITY ========== -->
+    <section id="trust" class="company-panel">
+      <div class="panel-head text-center">
+        <span class="sub-title">Trust &amp; Security</span>
+        <h2 class="title">Enterprise Quality Requires Enterprise Trust</h2>
+        <p class="lead max-800">
+          TesQuirel works with enterprise applications and business processes
+          where security, privacy, reliability and traceability matter. Our
+          approach to enterprise trust includes consideration of:
+        </p>
+      </div>
+
+      <ul class="company-check-list two-col">
+        @for (item of trustItems; track item) {
+        <li><i class="fas fa-shield-alt"></i> {{ item }}</li>
+        }
+      </ul>
+
+      <p class="lead text-center max-800">
+        As AI becomes part of enterprise applications and Quality Engineering,
+        trust extends beyond infrastructure security. Organizations also need
+        to understand:
+      </p>
+
+      <ul class="company-check-list two-col">
+        @for (q of trustQuestions; track q) {
+        <li><i class="fas fa-question-circle"></i> {{ q }}</li>
+        }
+      </ul>
+
+      <!-- <div class="panel-image">
+        <img src="assets/images/our company/ourcompany2.png"
+             alt="TrustVerse framework" />
+      </div> -->
+
+      <div class="trustverse-box">
+        <h4>TrustVerse™</h4>
+        <p class="lead">
+          This is the thinking behind TrustVerse, TesQuirel's framework for
+          trusted AI Quality Engineering and evaluation — focused on
+          evaluation, accuracy, guardrails, evidence, accountability and
+          continuous evaluation.
+        </p>
+        <a class="tsq-btn light" href="https://calendly.com/prasad-jwalapuram-tesquirel/30min">
+          Explore TrustVerse <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== 7. WHAT MAKES US DIFFERENT ========== -->
+    <section id="different" class="company-panel">
+      <div class="panel-head text-center">
+        <span class="sub-title">What Makes TesQuirel Different</span>
+        <h2 class="title">Quality Engineering Around Business Context</h2>
+        <p class="lead max-800">
+          Many testing solutions begin with the application.
+          <strong>TesQuirel begins with the business intent and the quality
+            question.</strong>
+        </p>
+        <p class="lead max-800">
+          The platform connects requirements, scenarios, tests, execution and
+          evidence — allowing organizations to move beyond measuring testing
+          activity and toward understanding the quality and risk of the release.
+        </p>
+        <p class="lead max-800">
+          For modern AI systems, the same principle extends further: define
+          intent, evaluate behaviour, apply guardrails, capture evidence,
+          ensure accountability and continuously evaluate. That is the
+          foundation of TesQuirel's TrustVerse perspective on AI Quality
+          Engineering.
+        </p>
+      </div>
+
+      <div class="panel-image">
+        <img src="assets/images/our company/ourcompany1.png"
+          alt="TesQuirel business context driven quality engineering" />
+      </div>
+      <p class="lead max-800">
+        This allows organizations to move beyond measuring testing activity and toward understanding the quality and
+        risk of the release.
+        For modern AI systems, the same principle extends further:
+      </p>
+      <div class="panel-image">
+        <img src="assets/images/our company/ourcompany2.png"
+          alt="TesQuirel business context driven quality engineering" />
+      </div>
+    </section>
+
+    <!-- ========== 8. OUR PERSPECTIVE ========== -->
+    <section id="perspective" class="company-panel">
+      <div class="panel-head text-center">
+        <span class="sub-title">Our Perspective</span>
+        <h2 class="title">Quality Is Becoming an Intelligence Problem</h2>
+        <p class="lead max-800">
+          As applications become more interconnected and AI becomes part of
+          enterprise software, Quality Engineering must evolve.
+        </p>
+        <p class="lead max-800">
+          The challenge is no longer simply:
+          <em>"How do we execute more tests?"</em>
+        </p>
+        <p class="lead text-center"><strong>It is increasingly:</strong></p>
+      </div>
+
+      <blockquote class="company-quote text-center max-800">
+        "How do we know that the system, business journey or AI agent is
+        behaving as intended — and can we prove it?"
+      </blockquote>
+
+      <p class="lead text-center">
+        <strong>TesQuirel is building toward that future.</strong>
+      </p>
+
+      <!-- <div class="panel-image">
+        <img src="assets/images/our company/ourcompany2.png" alt="TesQuirel AI Quality Engineering future" />
+      </div> -->
+    </section>
+
+    <!-- ========== 9. FAQs ========== -->
+    <section id="faqs" class="company-panel">
+      <div class="panel-head text-center">
+        <span class="sub-title">FAQs</span>
+        <h2 class="title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        @for (faq of faqs; track faq.q; let i = $index) {
+        <div class="faq-item" [class.open]="openFaq === i">
+          <button type="button" class="faq-q" (click)="toggleFaq(i)">
+            <span>{{ faq.q }}</span>
+            <i class="fas" [class.fa-plus]="openFaq !== i" [class.fa-minus]="openFaq === i"></i>
+          </button>
+          @if (openFaq === i) {
+          <div class="faq-a">
+            <p>{{ faq.a }}</p>
+          </div>
+          }
+        </div>
+        }
+      </div>
+
+      <div class="panel-cta">
+        <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="tsq-btn"> Talk to an Expert <i
+        class="fas fa-arrow-right"></i></a>
+        <!-- <a class="tsq-btn" [href]="calendly" target="_blank" rel="noopener">
+          Talk to an Expert <i class="fas fa-arrow-right"></i>
+        </a> -->
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ================= CLOSING CTA ================= -->
+<section class="closing-cta">
+   <div class="closing-overlay"></div>
+  <!-- <img class="closing-bg" src="assets/images/our company/ourcompany1.png" alt="" />  -->
+
+  <div class="container closing-content">
+    <h2>Ready to Engineer Quality into Every Release?</h2>
+    <p>
+      Let's talk about how TesQuirel can help you validate modern, legacy and
+      hybrid applications with greater speed, coverage and release confidence.
+    </p>
+    <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="tsq-btn"> Talk to an Expert <i
+        class="fas fa-arrow-right"></i></a>
+    <!-- <a class="tsq-btn light" [href]="calendly" target="_blank" rel="noopener">
+      Talk to an Expert <i class="fas fa-arrow-right"></i>
+    </a> -->
+  </div>
+</section>

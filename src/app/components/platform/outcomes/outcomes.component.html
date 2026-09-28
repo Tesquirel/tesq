@@ -1,0 +1,518 @@
+<main class="outcomes-page">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__media">
+        <br><br>
+        <img
+          src="assets/images/platform/overview-hero.png"
+          alt="The TesQuirel Platform connecting VeritAI, Breez, AIris, @Test and SakhAI across web, mobile, API, legacy and hybrid environments"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE CHALLENGE ============ -->
+  <section class="section challenge">
+    <div class="section__inner narrow">
+      <h2>The quality challenge is bigger than test execution.</h2>
+      <p>
+        Enterprise applications rarely exist as a single system. A customer journey may
+        move through a web application, mobile experience, APIs, databases, integration
+        services and legacy platforms. A change that appears small at the UI layer can
+        affect a process, calculation or business transaction.
+      </p>
+      <p>
+        TesQuirel is designed around this reality. The platform connects the activities
+        teams need to understand, design, execute and interpret quality across the
+        application landscape — not just automate individual test steps.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ ONE PLATFORM, MULTIPLE NEEDS ============ -->
+  <section class="section needs">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>One platform. Multiple quality needs.</h2>
+      </div>
+      <ul class="needs__grid">
+        @for (need of qualityNeeds; track need) {
+          <li class="needs__item">
+            <svg class="check" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m5 13 4 4L19 7" />
+            </svg>
+            <span>{{ need }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ BUILT FOR ENTERPRISE ============ -->
+  <section class="section built-for">
+    <div class="section__inner">
+      <div class="built-for__copy">
+        <h2>Built for the way enterprise applications actually work</h2>
+        <p>
+          TesQuirel's Breez documentation identifies Web, API, Mobile and AS/400 as
+          target-system types. Its published success stories also include AS/400-based
+          insurance ERP automation with secure private-cloud deployment — supporting the
+          platform's positioning for legacy and hybrid enterprise landscapes.
+        </p>
+        <ul class="chip-row">
+          @for (system of targetSystems; track system.label) {
+            <li class="chip">
+              <app-icon [name]="system.icon" class="chip-icon" />
+              <span>{{ system.label }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A CONNECTED PLATFORM EXPERIENCE ============ -->
+  <section class="section connected">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>A connected platform experience</h2>
+        <p>
+          Five purpose-built products. One integrated platform. From test intelligence
+          and design to automation, validation and execution insight — TesQuirel connects
+          everything you need for modern quality engineering. Tap any product below to
+          explore it.
+        </p>
+      </div>
+
+      <div class="platform-graphic">
+        <div class="platform-graphic__badges">
+          @for (product of products; track product.route) {
+            <a class="product-badge" [class]="'product-badge--' + product.accent" [routerLink]="product.route">
+              <span class="product-badge__name">{{ product.name }}</span>
+              <span class="product-badge__tag">{{ product.tag }}</span>
+            </a>
+          }
+        </div>
+
+        <div class="platform-graphic__hub">
+          <span class="hub__title">The TesQuirel Platform</span>
+          <span class="hub__subtitle">CONNECT&nbsp;|&nbsp;VALIDATE&nbsp;|&nbsp;ASSURE&nbsp;|&nbsp;ACCELERATE</span>
+        </div>
+      </div>
+
+      <img
+        class="connected__figure"
+        src="assets/images/platform/overview-1.png"
+        alt="Diagram showing the connected TesQuirel platform experience, one operating model for quality, the end-to-end pipeline, and the path from testing activity to release confidence"
+        loading="lazy"
+      />
+
+      <p class="connected__summary">
+        Together these capabilities create one operating model: understand what needs to
+        be tested, design the coverage, execute it efficiently, validate what users see,
+        understand what happened, and retain evidence of quality.
+      </p>
+
+      <ul class="operating-model">
+        @for (step of operatingModel; track step.label) {
+          <li>
+            <app-icon [name]="step.icon" class="operating-model__icon" />
+            <span>{{ step.label }}</span>
+          </li>
+        }
+      </ul>
+
+      <ol class="pipeline">
+        @for (stage of pipeline; track stage.title; let i = $index) {
+          <li class="pipeline__step">
+            <div class="pipeline__icon"><app-icon [name]="stage.icon" /></div>
+            <h3>{{ stage.title }}</h3>
+            <p>{{ stage.sub }}</p>
+            @if (i < pipeline.length - 1) {
+              <span class="pipeline__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            }
+          </li>
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FROM ACTIVITY TO RELEASE CONFIDENCE ============ -->
+  <section class="section confidence">
+    <div class="section__inner narrow">
+      <h2>From testing activity to release confidence</h2>
+      <p>
+        Quality is not the number of test cases executed. It is the confidence that the
+        journeys that matter have been covered, the right evidence exists, failures are
+        understood, and release decisions are based on information.
+      </p>
+      <p>
+        <!-- TesQuirel helps teams move toward that outcome by connecting test intelligence,
+        execution and evidence across the lifecycle. -->
+        TesQuirel supports teams in moving toward that outcome through the connection of test intelligence, execution, and evidence across the lifecycle.
+      </p>
+
+      <ul class="stat-cards">
+        @for (stat of outcomeStats; track stat.label) {
+          <li class="stat-card">
+            <app-icon [name]="stat.icon" class="stat-card__icon" />
+            <span>{{ stat.label }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ PLATFORM NAVIGATION ============ -->
+  <section class="section platform-nav">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Platform navigation</h2>
+          <!-- <p>Keep exploring how TesQuirel turns testing activity into release confidence.</p> -->
+      </div>
+
+      <div class="platform-nav__grid">
+        @for (item of platformNav; track item.route) {
+          <a class="nav-card" [routerLink]="item.route">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
+            <span class="nav-card__link">
+              Explore
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+          </a>
+        }
+
+        <div class="nav-card nav-card--products">
+          <h3>Explore Products</h3>
+          <p>Move to our Products.</p>
+          <ul class="nav-card__product-links">
+            @for (product of products; track product.route) {
+              <li>
+                <a [routerLink]="product.route" [class]="'text-link text-link--' + product.accent">
+                  {{ product.name }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq">
+    <div class="section__inner narrow">
+      <div class="section__heading">
+        <h2>Frequently Asked Questions?</h2>
+      </div>
+
+      <ul class="faq__list">
+        @for (item of faqs; track item.question; let i = $index) {
+          <li class="faq__item" [class.faq__item--open]="isFaqOpen(i)">
+            <button
+              type="button"
+              class="faq__question"
+              [attr.aria-expanded]="isFaqOpen(i)"
+              (click)="toggleFaq(i)"
+            >
+              {{ item.question }}
+              <svg class="faq__chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            @if (isFaqOpen(i)) {
+              <p class="faq__answer">{{ item.answer }}</p>
+            }
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- <main class="outcomes-page">
+
+ 
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <span class="eyebrow">AI-Powered Quality Engineering</span>
+        <h1>
+          AI-Powered Quality Engineering for
+          <span class="gradient-text">Complex Enterprise Landscapes</span>
+        </h1>
+        <p class="lead">
+          Test applications, validate business journeys and build release confidence
+          across modern, legacy and hybrid systems.
+        </p>
+        <p>
+          TesQuirel brings test intelligence, no-script automation, visual validation,
+          test management and execution insight into a Quality Engineering platform —
+          so teams can move faster without losing control of quality.
+        </p>
+
+        <div class="hero__cta">
+          <a routerLink="/Platform/How-it-works" class="btn btn--primary">
+            Explore the Platform
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a routerLink="/book-an-appointment" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M10 8.5v7l6-3.5-6-3.5Z" fill="currentColor" stroke="none" />
+            </svg>
+            Watch Video
+          </a>
+        </div>
+
+        <ul class="hero__stats">
+          @for (stat of heroStats; track stat.label) {
+            <li>
+              <app-icon [name]="stat.icon" class="stat-icon" />
+              <span>{{ stat.label }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="hero__media">
+        <img
+          src="assets/images/platform/overview-hero.png"
+          alt="The TesQuirel Platform connecting VeritAI, Breez, AIris, @Test and SakhAI across web, mobile, API, legacy and hybrid environments"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section challenge">
+    <div class="section__inner narrow">
+      <h2>The quality challenge is bigger than test execution.</h2>
+      <p>
+        Enterprise applications rarely exist as a single system. A customer journey may
+        move through a web application, mobile experience, APIs, databases, integration
+        services and legacy platforms. A change that appears small at the UI layer can
+        affect a process, calculation or business transaction.
+      </p>
+      <p>
+        TesQuirel is designed around this reality. The platform connects the activities
+        teams need to understand, design, execute and interpret quality across the
+        application landscape — not just automate individual test steps.
+      </p>
+    </div>
+  </section>
+
+  <section class="section needs">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>One platform. Multiple quality needs.</h2>
+      </div>
+      <ul class="needs__grid">
+        @for (need of qualityNeeds; track need) {
+          <li class="needs__item">
+            <svg class="check" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m5 13 4 4L19 7" />
+            </svg>
+            <span>{{ need }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section built-for">
+    <div class="section__inner">
+      <div class="built-for__copy">
+        <h2>Built for the way enterprise applications actually work</h2>
+        <p>
+          TesQuirel's Breez documentation identifies Web, API, Mobile and AS/400 as
+          target-system types. Its published success stories also include AS/400-based
+          insurance ERP automation with secure private-cloud deployment — supporting the
+          platform's positioning for legacy and hybrid enterprise landscapes.
+        </p>
+        <ul class="chip-row">
+          @for (system of targetSystems; track system.label) {
+            <li class="chip">
+              <app-icon [name]="system.icon" class="chip-icon" />
+              <span>{{ system.label }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section connected">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>A connected platform experience</h2>
+        <p>
+          Five purpose-built products. One integrated platform. From test intelligence
+          and design to automation, validation and execution insight — TesQuirel connects
+          everything you need for modern quality engineering. Tap any product below to
+          explore it.
+        </p>
+      </div>
+
+      <div class="platform-graphic">
+        <div class="platform-graphic__badges">
+          @for (product of products; track product.route) {
+            <a class="product-badge" [class]="'product-badge--' + product.accent" [routerLink]="product.route">
+              <span class="product-badge__name">{{ product.name }}</span>
+              <span class="product-badge__tag">{{ product.tag }}</span>
+            </a>
+          }
+        </div>
+
+        <div class="platform-graphic__hub">
+          <span class="hub__title">The TesQuirel Platform</span>
+          <span class="hub__subtitle">CONNECT&nbsp;|&nbsp;VALIDATE&nbsp;|&nbsp;ASSURE&nbsp;|&nbsp;ACCELERATE</span>
+        </div>
+      </div>
+
+      <img
+        class="connected__figure"
+        src="assets/images/platform/overview-1.png"
+        alt="Diagram showing the connected TesQuirel platform experience, one operating model for quality, the end-to-end pipeline, and the path from testing activity to release confidence"
+        loading="lazy"
+      />
+
+      <p class="connected__summary">
+        Together these capabilities create one operating model: understand what needs to
+        be tested, design the coverage, execute it efficiently, validate what users see,
+        understand what happened, and retain evidence of quality.
+      </p>
+
+      <ul class="operating-model">
+        @for (step of operatingModel; track step.label) {
+          <li>
+            <app-icon [name]="step.icon" class="operating-model__icon" />
+            <span>{{ step.label }}</span>
+          </li>
+        }
+      </ul>
+
+      <ol class="pipeline">
+        @for (stage of pipeline; track stage.title; let i = $index) {
+          <li class="pipeline__step">
+            <div class="pipeline__icon"><app-icon [name]="stage.icon" /></div>
+            <h3>{{ stage.title }}</h3>
+            <p>{{ stage.sub }}</p>
+            @if (i < pipeline.length - 1) {
+              <span class="pipeline__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            }
+          </li>
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section confidence">
+    <div class="section__inner narrow">
+      <h2>From testing activity to release confidence</h2>
+      <p>
+        Quality is not the number of test cases executed. It is the confidence that the
+        journeys that matter have been covered, the right evidence exists, failures are
+        understood, and release decisions are based on information.
+      </p>
+      <p>
+        TesQuirel helps teams move toward that outcome by connecting test intelligence,
+        execution and evidence across the lifecycle.
+      </p>
+
+      <ul class="stat-cards">
+        @for (stat of outcomeStats; track stat.label) {
+          <li class="stat-card">
+            <app-icon [name]="stat.icon" class="stat-card__icon" />
+            <span>{{ stat.label }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section platform-nav">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Platform navigation</h2>
+        <p>Keep exploring how TesQuirel turns testing activity into release confidence.</p>
+      </div>
+
+      <div class="platform-nav__grid">
+        @for (item of platformNav; track item.route) {
+          <a class="nav-card" [routerLink]="item.route">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.desc }}</p>
+            <span class="nav-card__link">
+              Explore
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+          </a>
+        }
+
+        <div class="nav-card nav-card--products">
+          <h3>Explore Products</h3>
+          <p>Move to our Products.</p>
+          <ul class="nav-card__product-links">
+            @for (product of products; track product.route) {
+              <li>
+                <a [routerLink]="product.route" [class]="'text-link text-link--' + product.accent">
+                  {{ product.name }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <div class="section__inner narrow">
+      <div class="section__heading">
+        <h2>Frequently asked questions</h2>
+      </div>
+
+      <ul class="faq__list">
+        @for (item of faqs; track item.question; let i = $index) {
+          <li class="faq__item" [class.faq__item--open]="isFaqOpen(i)">
+            <button
+              type="button"
+              class="faq__question"
+              [attr.aria-expanded]="isFaqOpen(i)"
+              (click)="toggleFaq(i)"
+            >
+              {{ item.question }}
+              <svg class="faq__chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            @if (isFaqOpen(i)) {
+              <p class="faq__answer">{{ item.answer }}</p>
+            }
+          </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+</main> -->

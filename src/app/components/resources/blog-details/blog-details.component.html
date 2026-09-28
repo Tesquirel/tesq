@@ -1,0 +1,47 @@
+<!-- Blog Details Start -->
+<div class="section blog-details-section section-padding-02">
+  <div class="container">
+    <!-- Blog Details Wrap Start -->
+    <div class="blog-details-wrap">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12">
+          <!-- Blog Details Post Start -->
+          <div class="blog-details-post">
+            <!-- Single Blog Start -->
+            <div class="single-blog-post single-blog">
+              <div class="blog-image">
+                <a href="#"
+                  ><img src="{{ blog.poster }}" alt="{{ blog.poster }}"
+                /></a>
+                <div class="top-meta">
+                  <span class="date"
+                    ><span>{{ blog.created | date : "dd" }}</span
+                    >{{ blog.created | date : "MMM" }}</span
+                  >
+                </div>
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span class="tag"
+                    ><i class="far fa-bookmark"></i> {{ blog.category }}</span
+                  >
+                  <span
+                    ><i class="fas fa-user"></i>
+                    <a href="#">{{ blog.author }}</a></span
+                  >
+                  <!-- <span><i class="far fa-comments"></i> 0 Comments</span> -->
+                </div>
+                <h3 class="title">{{ blog.title }}</h3>
+                <div class="article" [innerHTML]="blog.content"></div>
+              </div>
+            </div>
+            <!-- Single Blog End -->
+          </div>
+          <!-- Blog Details Post End -->
+        </div>
+      </div>
+    </div>
+    <!-- Blog Details Wrap End -->
+  </div>
+</div>
+<!-- Blog Details End -->

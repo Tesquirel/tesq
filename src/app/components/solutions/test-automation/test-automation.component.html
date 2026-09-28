@@ -1,0 +1,244 @@
+<main class="test-automation-page">
+
+  <!-- ============ HERO (IMAGE ONLY) ============ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__media">
+        <br>
+        <br>
+        <img [src]="heroImage" alt="TesQuirel Test Automation for Modern, Legacy and Hybrid Enterprises"
+          loading="eager" />
+      </div>
+    </div>
+  </section>
+  <section class="section challenge">
+    <div class="section__inner narrow">
+      <h2>{{ whyTitlehero }}</h2>
+      <p>{{ whyDescriptionhero }}</p>
+    </div>
+    <div class="hero__cta">
+      <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="hero__button">Talk to an Expert</a>
+    </div>
+  </section>
+
+  <!-- ============ THE CHALLENGE / INTRO ============ -->
+  <section class="section challenge">
+    <div class="section__inner narrow">
+      <h2>{{ whyTitle }}</h2>
+      <p>{{ whyDescription }}</p>
+    </div>
+  </section>
+
+  <!-- ============ KEY CAPABILITIES ============ -->
+  <!-- <section class="section capabilities-section">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>The TesQuirel Platform</h2>
+        <p>Connect. Validate. Assure. Accelerate.</p>
+      </div>
+
+      <div class="capabilities__grid">
+        <div *ngFor="let cap of keyCapabilities; let i = index" 
+             class="capability-card"
+             [ngClass]="'capability-card--' + cap.colorKey"
+             [class.capability-card--visible]="isVisible(i)">
+          <div class="capability-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ng-container [ngSwitch]="cap.icon">
+                <ng-container *ngSwitchCase="'brain'">
+                  <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z" />
+                  <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'code'">
+                  <path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'eye'">
+                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'link'">
+                  <path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5" />
+                  <path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.5-1.5" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'chart'">
+                  <path d="M3 3v18h18" />
+                  <path d="M7 15v3M12 10v8M17 6v12" />
+                </ng-container>
+              </ng-container>
+            </svg>
+          </div>
+          <h3>{{ cap.title }}</h3>
+          <p class="capability-card__subtitle">{{ cap.subtitle }}</p>
+          <p class="capability-card__description">{{ cap.description }}</p>
+          <a [routerLink]="cap.route" class="capability-card__link">
+            See how {{ cap.displayLink }} fits in
+          </a>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ============ DETAILED FEATURE SECTIONS ============ -->
+  <section class="section detail-sections">
+    <div class="section__inner">
+      <div *ngFor="let section of featureSections; let i = index" class="detail-section">
+        <div class="detail-section__content">
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHITECTURE IMAGE ============ -->
+  <section class="section connected">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>The platform flow, end to end</h2>
+        <!-- <p>Business intent, test intelligence, automation, validation and evidence — connected, not siloed.</p> -->
+      </div>
+
+      <img [src]="architectureImage" alt="Diagram of the TesQuirel platform flow" class="connected__figure" />
+    </div>
+  </section>
+
+  <!-- ============ WHERE TESQUIREL FITS ============ -->
+  <section class="section where-section">
+    <div class="section__inner narrow">
+      <h2>{{ whereTitle }}</h2>
+      <p>{{ whereDescription }}</p>
+    </div>
+  </section>
+
+  <!-- ============ EXPECTED OUTCOMES ============ -->
+  <section class="section outcomes-section">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Expected Outcomes</h2>
+        <p>A designed automation program should improve repeatability, shorten regression cycles, broaden coverage and
+          reduce manual execution effort.</p>
+      </div>
+
+      <div class="outcomes__grid">
+        <div *ngFor="let outcome of expectedOutcomes; let i = index" class="outcome-card"
+          [class.outcome-card--visible]="isVisible(i)">
+          <div class="outcome-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <ng-container [ngSwitch]="outcome.icon">
+                <ng-container *ngSwitchCase="'repeat'">
+                  <path d="M17 1l4 4-4 4" />
+                  <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                  <path d="M7 23l-4-4 4-4" />
+                  <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'clock'">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'expand'">
+                  <path d="M3 12h18M3 6h18M3 18h18" />
+                  <path d="M8 4v16M16 4v16" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'reduction'">
+                  <path d="M6 13V6M18 13V6" />
+                  <path d="M6 18h12" />
+                  <path d="M9 9h6M9 12h6" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'understanding'">
+                  <path d="M9 12l2 2 4-4" />
+                  <circle cx="12" cy="12" r="9" />
+                </ng-container>
+                <ng-container *ngSwitchCase="'decision'">
+                  <path d="M9 12l2 2 4-4" />
+                  <path d="M12 3 4 6v6c0 4.5 3.2 7.7 8 9 4.8-1.3 8-4.5 8-9V6l-8-3Z" />
+                </ng-container>
+              </ng-container>
+            </svg>
+          </div>
+          <h3>{{ outcome.title }}</h3>
+          <p>{{ outcome.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLATFORM NAVIGATION ============ -->
+  <!-- <section class="section platform-nav">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Platform navigation</h2>
+        <p>Keep exploring how TesQuirel turns testing activity into release confidence.</p>
+      </div>
+
+      <div class="platform-nav__grid">
+        <a class="nav-card" routerLink="/Platform/How-it-works">
+          <h3>How It Works</h3>
+          <p>Explore the seven stages of quality engineering.</p>
+          <span class="nav-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="nav-card" routerLink="/Platform/achitecture">
+          <h3>Architecture</h3>
+          <p>Understand the connected quality architecture.</p>
+          <span class="nav-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="nav-card" routerLink="/Platform/key-capabilities">
+          <h3>Key Capabilities</h3>
+          <p>Discover the platform's connected capabilities.</p>
+          <span class="nav-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+
+        <a class="nav-card" routerLink="/Platform/platform-overview">
+          <h3>Outcomes</h3>
+          <p>See the quality outcomes you can achieve.</p>
+          <span class="nav-card__link">
+            Explore
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq">
+    <div class="section__inner narrow">
+      <div class="section__heading">
+        <h2>Frequently Asked Questions?</h2>
+      </div>
+
+      <ul class="faq__list">
+        <li *ngFor="let item of faqs; let i = index" class="faq__item" [class.faq__item--open]="isFaqOpen(i)">
+          <button type="button" class="faq__question" [attr.aria-expanded]="isFaqOpen(i)" (click)="toggleFaq(i)">
+            {{ item.question }}
+            <svg class="faq__chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <p *ngIf="isFaqOpen(i)" class="faq__answer">{{ item.answer }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>

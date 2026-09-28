@@ -1,0 +1,175 @@
+<div class="row">
+  <div class="section-title text-center">
+    <h2 class="title">Fix Your Appointment with us</h2>
+    <!-- <p class="text">
+      No two products work the same way but your tools should always keep up.
+      Whether you are working on legacy terminals or modern cloud platforms, you
+      can validate every journey with the same no-code approach.
+    </p> -->
+  </div>
+  <div class="col-md-12">
+    <div class="calendar">
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button class="nav-btn" (click)="previousMonth()">Prev</button>
+          <span class="month-year"
+            >{{ currentYear }} -
+            {{ currentMonth + 1 + "/1/" + currentYear | date : "MMM" }}</span
+          >
+          <button class="nav-btn" (click)="nextMonth()">Next</button>
+        </div>
+
+        <!-- <div class="calendar-grid">
+          @for(day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; track
+          day){
+          <div class="day-name">
+            {{ day }}
+          </div>
+          } @for(week of weeks; track $index){
+          <ng-container>
+            @for(day of week; track day.getTime()){
+            <div
+              class="day-cell"
+              [class.other-month]="!isCurrentMonth(day)"
+              [class.selected]="isSelected(day)"
+              [class.disabled]="isPastDate(day)"
+              (click)="onDayClick(day)"
+            >
+              {{ day | date : "d" }}
+            </div>
+            }
+          </ng-container>
+          }
+        </div> -->
+        <div class="calendar-grid">
+          @for(day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; track
+          day) {
+          <div class="day-name">{{ day }}</div>
+          } @for(week of weeks; track $index) {
+          <ng-container>
+            @for(day of week; track day.getTime()) {
+            <div
+              class="day-cell"
+              [class.other-month]="!isCurrentMonth(day)"
+              [class.selected]="isSelected(day)"
+              [class.disabled]="
+                isPastDate(day) || isSunday(day) || isUnavailableDate(day)
+              "
+              [class.unavailable]="isUnavailableDate(day)"
+              (click)="onDayClick(day)"
+            >
+              {{ day | date : "d" }}
+            </div>
+            }
+          </ng-container>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    @if(selectedDate){
+    <div class="contact-form">
+      <div class="contact-form-wrap">
+        <!-- <div class="heading-wrap text-center">
+          <span class="sub-title">Leave us massage</span>
+          <h3 class="title">Choose the Time Slot</h3>
+        </div> -->
+        <form [formGroup]="appointmentForm">
+          <div class="row">
+            <div class="col-sm-12">
+              <!-- <div class="time-slot-list">
+                @for(time of timeSlots; track time) {
+                <div
+                  class="time-slot"
+                  [class.selected]="selectedTime === time"
+                  (click)="onTimeSelect(time)"
+                >
+                  {{ time }}
+                </div>
+                }
+              </div> -->
+              <div class="timeslot-grid">
+                @for(slot of availableTimeSlots; track slot) {
+                <div
+                  class="timeslot"
+                  [class.selected]="selectedTimeSlot === slot"
+                  [class.disabled]="bookedSlotsForDate.includes(slot)"
+                  (click)="
+                    !bookedSlotsForDate.includes(slot) && onTimeSelect(slot)
+                  "
+                >
+                  {{ slot }}
+                </div>
+                }
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <!-- Single Form Start -->
+              <div class="single-form">
+                <input
+                  type="text"
+                  placeholder="Full Name *"
+                  formControlName="appointmentFullName"
+                />
+              </div>
+              <!-- Single Form End -->
+            </div>
+            <div class="col-sm-12">
+              <!-- Single Form Start -->
+              <div class="single-form">
+                <input
+                  type="text"
+                  placeholder="Email ID *"
+                  formControlName="appointmentEmailID"
+                />
+              </div>
+              <!-- Single Form End -->
+            </div>
+            <div class="col-sm-12">
+              <!-- Single Form Start -->
+              <div class="single-form">
+                <input
+                  type="text"
+                  placeholder="Subject *"
+                  formControlName="appointmentSubject"
+                />
+              </div>
+              <!-- Single Form End -->
+            </div>
+            <div class="col-sm-12">
+              <!-- Single Form Start -->
+              <div class="single-form">
+                <textarea
+                  placeholder="Write A Message"
+                  formControlName="appointmentMessage"
+                ></textarea>
+              </div>
+              <!-- Single Form End -->
+            </div>
+            <div class="col-sm-12">
+              <!--  Single Form Start -->
+              <div class="form-btn">
+                <button
+                  class="btn"
+                  [disabled]="
+                    !appointmentForm.valid ||
+                    !selectedDate ||
+                    !selectedTimeSlot ||
+                    isBooking
+                  "
+                  (click)="appointmentBooking()"
+                >
+                  @if(isBooking){ Please wait while the Booking is in
+                  progress... } @else { Book an Appointment }
+                </button>
+              </div>
+              <!--  Single Form End -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    }
+  </div>
+</div>

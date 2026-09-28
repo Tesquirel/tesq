@@ -1,0 +1,112 @@
+<main class="accountability-page">
+
+  <!-- ============ HERO (IMAGE + CTA) ============ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__media">
+        <br>
+        <br>
+        <br>
+        <img [src]="heroImage" alt="TrustVerse Accountability — AI Can Decide. Someone Still Owns the Outcome."
+          loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <div class="hero__cta">
+    <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="hero__button">Talk to an Expert</a>
+  </div>
+
+  <!-- ============ WHY SECTION ============ -->
+  <section class="section challenge">
+    <div class="section__inner">
+      <h2>{{ whyTitle }}</h2>
+      <p>{{ whyDescription }}</p>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE SECTIONS (TOP) ============ -->
+  <section class="section detail-sections">
+    <div class="section__inner">
+      <div *ngFor="let section of featureSectionsTop; let i = index" class="detail-section"
+        [class.detail-section--alt]="i % 2 === 1" [class.detail-section--visible]="isVisible(i)">
+        <div class="detail-section__content">
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLOW IMAGE ============ -->
+  <section class="section connected">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Accountability, connected end to end</h2>
+      </div>
+
+      <img [src]="flowImage"
+        alt="Diagram of AI accountability across governance, validation, oversight and evidence"
+        class="connected__figure" />
+    </div>
+  </section>
+
+  <!-- ============ FEATURE SECTIONS (BOTTOM) ============ -->
+  <section class="section detail-sections">
+    <div class="section__inner">
+      <div *ngFor="let section of featureSectionsBottom; let i = index" class="detail-section"
+        [class.detail-section--alt]="i % 2 === 1" [class.detail-section--visible]="isVisible(i)">
+        <div class="detail-section__content">
+          <h2>{{ section.title }}</h2>
+          <p>{{ section.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Frequently Asked Questions?</h2>
+      </div>
+
+      <ul class="faq__list">
+        <li *ngFor="let item of faqs; let i = index" class="faq__item" [class.faq__item--open]="isFaqOpen(i)">
+          <button type="button" class="faq__question" [attr.aria-expanded]="isFaqOpen(i)" (click)="toggleFaq(i)">
+            {{ item.question }}
+            <svg class="faq__chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <p *ngIf="isFaqOpen(i)" class="faq__answer">{{ item.answer }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ RECOMMENDED INTERNAL LINKS ============ -->
+  <section class="section related-links">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Explore more of TrustVerse</h2>
+      </div>
+
+      <ul class="related-links__list">
+        <li *ngFor="let link of internalLinks" class="related-links__item">
+          <a [routerLink]="link.path" class="related-links__anchor">
+            <span>{{ link.label }}</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>

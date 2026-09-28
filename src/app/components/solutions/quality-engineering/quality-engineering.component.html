@@ -1,0 +1,145 @@
+<main class="quality-engineering-page">
+
+  <!-- ============ HERO (IMAGE + CTA) ============ -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__media">
+        <br>
+        <br>
+        <br>
+        <br>
+        <img [src]="heroImage" alt="TesQuirel End-to-End Quality Engineering" loading="eager" />
+      </div>
+    </div>
+  </section>
+ <section class="section challenge">
+    <div class="section__inner">
+      <h2>{{ whyTitle1 }}</h2>
+      <p>{{ whyDescription1 }}</p>
+    </div>
+  </section>
+  <!-- ============ CTA ============ -->
+  <div class="hero__cta">
+    <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="hero__button">
+      <span>Talk to an Expert</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14" />
+        <path d="m13 6 6 6-6 6" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- ============ WHY SECTION ============ -->
+  <section class="section challenge">
+    <div class="section__inner">
+      <h2>{{ whyTitle }}</h2>
+      <p>{{ whyDescription }}</p>
+    </div>
+  </section>
+
+  <!-- ============ DESCRIPTIVE FEATURE SECTIONS ============ -->
+  <section class="section detail-sections">
+    <div class="section__inner">
+      <div *ngFor="let section of featureSections; let i = index"
+        class="detail-section detail-section--feature"
+        [class.detail-section--alt]="i % 2 === 1"
+        [class.detail-section--visible]="isVisible(i)">
+        <div class="detail-section__card">
+          <div class="detail-section__content">
+            <h2>{{ section.title }}</h2>
+            <p *ngIf="section.description">{{ section.description }}</p>
+            <ul *ngIf="section.bullets && section.bullets.length"
+                class="detail-section__bullets"
+                [class.detail-section__bullets--chips]="section.chips === 'tag'"
+                [class.detail-section__bullets--check]="section.chips === 'check'">
+              <li *ngFor="let bullet of section.bullets">{{ bullet }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLOW IMAGE ============ -->
+  <section class="section connected">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Quality Engineering, connected end to end</h2>
+      </div>
+      <img [src]="flowImage"
+        alt="Diagram of end-to-end Quality Engineering across business intent, test intelligence, automation, validation and evidence"
+        class="connected__figure" />
+    </div>
+  </section>
+
+  <!-- ============ NUMBERED STEPS ============ -->
+  <section class="section detail-sections">
+    <div class="section__inner">
+      <div *ngFor="let step of steps; let i = index" class="detail-section"
+        [class.detail-section--alt]="i % 2 === 1" [class.detail-section--visible]="isVisible(i)">
+        <div class="detail-section__card">
+          <div class="detail-section__badge" aria-hidden="true">
+            <span>{{ step.number }}</span>
+          </div>
+          <div class="detail-section__content">
+            <h2>{{ step.title }}</h2>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUSINESS OUTCOMES ============ -->
+  <section class="section outcomes">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>{{ outcomesTitle }}</h2>
+      </div>
+      <ul class="outcomes__list">
+        <li *ngFor="let item of outcomes" class="outcomes__item">
+          <svg class="outcomes__check" viewBox="0 0 24 24" width="18" height="18" fill="none"
+            stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+          <span>{{ item }}</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq">
+    <div class="section__inner">
+      <div class="section__heading">
+        <h2>Frequently Asked Questions?</h2>
+      </div>
+      <ul class="faq__list">
+        <li *ngFor="let item of faqs; let i = index" class="faq__item" [class.faq__item--open]="isFaqOpen(i)">
+          <button type="button" class="faq__question" [attr.aria-expanded]="isFaqOpen(i)" (click)="toggleFaq(i)">
+            <span>{{ item.question }}</span>
+            <svg class="faq__chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <p *ngIf="isFaqOpen(i)" class="faq__answer">{{ item.answer }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CTA (BOTTOM) ============ -->
+  <div class="hero__cta hero__cta--bottom">
+    <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="hero__button">
+      <span>Talk to an Expert</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14" />
+        <path d="m13 6 6 6-6 6" />
+      </svg>
+    </a>
+  </div>
+
+</main>

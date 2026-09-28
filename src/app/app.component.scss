@@ -1,0 +1,160 @@
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  width: 60px !important;
+}
+
+.T,
+.ES {
+  font-family: sans-serif;
+  font-weight: 700;
+  color: var(--tesquirel-blue);
+}
+
+.QUIREL {
+  color: var(--tesquirel-green) !important;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+.T,
+.ES,
+.QUIREL {
+  font-size: 2rem;
+}
+
+.tesquirel-logo {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 400px) {
+  .header-logo img {
+    width: 40px !important;
+  }
+  .T,
+  .ES,
+  .QUIREL {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (width: 1024px) {
+  .T,
+  .ES,
+  .QUIREL {
+    font-size: 1.5rem;
+  }
+}
+
+.header-menu .main-menu li .sub-menu li:hover {
+  padding-left: 10px;
+  transition: all 0.3s linear;
+}
+
+.header-menu .main-menu li .sub-menu li {
+  padding-left: 0px;
+  transition: all 0.3s linear;
+}
+
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #222;
+  color: var(--tesquirel-white);
+  border-radius: 20px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 999;
+
+  &.switched {
+    background: #eee;
+    color: #333;
+  }
+}
+
+.progress-wrap {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 9999;
+  transform: none; /* 👈 ensure no movement */
+  will-change: opacity; /* smoother fade only */
+
+  &.active-progress {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  svg {
+    transform: rotate(-90deg);
+  }
+
+  path {
+    transition: stroke-dashoffset 0.15s linear;
+  }
+}
+
+/* Optional light theme */
+body.light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu-expand {
+    cursor: pointer;
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .sub-menu {
+    overflow: hidden;
+    height: 0;
+    display: none;
+    transition: height 0.3s ease;
+  }
+
+  .active > .sub-menu {
+    display: block;
+  }
+
+  .offcanvas-menu .main-menu li .menu-expand {
+    top: 3px !important;
+  }
+
+  .offcanvas-logo > img {
+    height: 36px !important;
+  }
+
+  .offcanvas-logo {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .offcanvas-tesquirel-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .offcanvas-tesquirel-logo .T,
+  .offcanvas-tesquirel-logo .ES,
+  .offcanvas-tesquirel-logo .QUIREL {
+    font-size: 1.2rem;
+  }
+}
+
+.footer-logo {
+  height: 100px;
+}

@@ -1,0 +1,26 @@
+.single-team .team-img {
+  position: relative;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.team-img-src {
+  width: 327px;
+  height: 423px;
+}
+
+@media (max-width: 768px) {
+  .team-img-src {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.section-padding {
+  padding-top: 120px !important;
+}
+
+.sub-title {
+  color: var(--tesquirel-title-yellow);
+  font-weight: bold;
+}

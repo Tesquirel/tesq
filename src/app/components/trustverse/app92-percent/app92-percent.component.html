@@ -1,0 +1,130 @@
+<main class="ap92">
+
+  <!-- HERO -->
+  <section class="ap92-hero">
+    <div class="ap92-hero__media">
+      <br>
+      <br>
+      <img src="assets/images/solution/perseent92hero.png"
+           alt="92% Accuracy Isn't Enough — a trusted AI Quality Engineering perspective built around measurable behavior, guardrails, evidence and accountable outcomes"
+           class="ap92-hero__image" />
+    </div>
+    <section class="ap92-section">
+      <div class="ap92-container ap92-container--narrow">
+        <p class="ap92-section__text">
+          92% Accuracy Isn't Enough — A trusted AI Quality Engineering perspective built around
+          measurable behavior, guardrails, evidence and accountable outcomes.
+        </p>
+      </div>
+    </section>
+    <div class="ap92-container ap92-hero__cta-wrap">
+      <a href="https://calendly.com/prasad-jwalapuram-tesquirel/30min" class="ap92-btn ap92-btn--primary">
+        Talk to an Expert
+      </a>
+    </div>
+  </section>
+
+  <!-- THE ACCURACY TRAP -->
+  <section class="ap92-section">
+    <div class="ap92-container ap92-container--narrow">
+      <h2 class="ap92-section__title">The Accuracy Trap</h2>
+      <p class="ap92-section__text">
+        Accuracy is attractive because it produces a simple number. But an aggregate accuracy
+        score can conceal where failures occur, how severe they are and what happens when the
+        system is wrong. For enterprise AI, the distribution and consequence of errors matter.
+      </p>
+    </div>
+  </section>
+
+  <!-- ACCURACY WITHOUT CONTEXT -->
+  <section class="ap92-section ap92-section--tint">
+    <div class="ap92-container ap92-container--narrow">
+      <h2 class="ap92-section__title">Accuracy Without Context</h2>
+      <p class="ap92-section__text">
+        The relevant question is not simply "How accurate is the model?" It is "Accurate for
+        which task, under which conditions, against which expected behavior, with what
+        consequences when it is wrong?" AI Quality Engineering therefore needs task-specific
+        evaluation, risk-based scenarios, business rules, boundary conditions and outcome-level
+        assessment.
+      </p>
+      <img src="assets/images/solution/present92foundation.png"
+           alt="Foundations that must sit beside accuracy in AI quality engineering"
+           class="ap92-section__image" />
+    </div>
+  </section>
+
+  <!-- WHAT MUST SIT BESIDE ACCURACY -->
+  <section class="ap92-section">
+    <div class="ap92-container">
+      <h2 class="ap92-section__title ap92-section__title--center">What Must Sit Beside Accuracy</h2>
+      <div class="ap92-signals">
+        <div class="ap92-signals__card" *ngFor="let signal of accuracySignals">
+          <h3 class="ap92-signals__title">{{ signal.title }}</h3>
+          <p class="ap92-signals__text">{{ signal.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE TRUSTVERSE POSITION -->
+  <section class="ap92-section ap92-section--tint">
+    <div class="ap92-container ap92-container--narrow">
+      <h2 class="ap92-section__title">The TrustVerse Position</h2>
+      <p class="ap92-section__text">
+        Trust is not a percentage. It is an evidence-backed assessment of whether an AI system
+        behaves acceptably within its intended operating boundaries. A mature evaluation program
+        combines quantitative metrics with scenario-based testing, risk thresholds, guardrail
+        validation, evidence capture and human accountability.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRACTICAL ENTERPRISE APPLICATION -->
+  <section class="ap92-section">
+    <div class="ap92-container ap92-container--narrow">
+      <h2 class="ap92-section__title">Practical Enterprise Application</h2>
+      <p class="ap92-section__text">
+        Instead of reporting only "92% accuracy," teams can report which business scenarios were
+        evaluated, which high-risk cases failed, which guardrails triggered, what evidence was
+        captured, what actions were taken and which exceptions require human review.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section class="ap92-section ap92-section--tint">
+    <div class="ap92-container ap92-container--narrow">
+      <h2 class="ap92-section__title ap92-section__title--center">Frequently Asked Questions?</h2>
+      <div class="ap92-faq">
+        <div class="ap92-faq__item" *ngFor="let faq of faqs; let i = index" [class.ap92-faq__item--open]="faq.open">
+          <button class="ap92-faq__question"
+                  type="button"
+                  (click)="toggleFaq(i)"
+                  [attr.aria-expanded]="faq.open">
+            <span class="ap92-faq__question-text">{{ faq.question }}</span>
+            <span class="ap92-faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="ap92-faq__answer" *ngIf="faq.open">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+      <a class="ap92-link" href="/ai-governance" rel="noopener noreferrer">AI Trust &amp; Governance</a>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="ap92-cta">
+    <div class="ap92-container ap92-cta__inner">
+      <h2 class="ap92-cta__title">Ready to look beyond the accuracy number?</h2>
+      <p class="ap92-cta__text">Talk to a TrustVerse expert about evidence-backed AI evaluation.</p>
+      <a class="ap92-btn ap92-btn--primary ap92-btn--light"
+         [href]="expertBookingUrl"
+         target="_blank"
+         rel="noopener noreferrer">
+        Talk to an Expert
+      </a>
+    </div>
+  </section>
+
+</main>

@@ -1,0 +1,26 @@
+# TesQuirel Website Robots Configuration
+# Last Updated: 2024-03-22
+
+# Allow all robots
+User-agent: *
+Allow: /
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow private/admin pages
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://tesquirel.com/sitemap.xml
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1
+
+# Request rate limit
+Request-rate: 30/1m

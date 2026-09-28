@@ -1,0 +1,240 @@
+<div class="fitment-evaluator">
+    <div *ngIf="loading" class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading AI Fitment Evaluator...</p>
+    </div>
+    <div *ngIf="error" class="error-state">
+        <p>⚠️ {{ error }}</p>
+        <button (click)="loadConfig()">Retry</button>
+    </div>
+    <ng-container *ngIf="!loading && !error">
+        <div class="header">
+            <!-- <h6>AI Project Fitment Evaluator</h6> -->
+        </div>
+        <div class="section prospect-section" *ngIf="!showCheckboxPage">
+            <h5 style="text-align: center;">📋 Information</h5>
+
+            <div class="form-section">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="form-field">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" [(ngModel)]="prospectData.fullName" (change)="checkProspectComplete()"
+                                (input)="checkProspectComplete()" placeholder="Enter full name"
+                                [class.invalid]="!prospectData.fullName && touched">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="form-field">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" [(ngModel)]="prospectData.email" (change)="validateEmail()"
+                                (input)="validateEmail(); checkProspectComplete()" placeholder="name@company.com"
+                                [class.invalid]="emailInvalid || (!prospectData.email && touched)">
+                            <div class="error-message" *ngIf="emailInvalid && prospectData.email">
+                                ⚠️ Please enter a valid email address
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="form-field">
+                            <label>Website URL <span class="required">*</span></label>
+                            <input type="url" [(ngModel)]="prospectData.websiteUrl" (change)="validateWebsite()"
+                                (input)="validateWebsite(); checkProspectComplete()" placeholder="https://example.com"
+                                [class.invalid]="websiteInvalid || (!prospectData.websiteUrl && touched)">
+                            <div class="error-message" *ngIf="websiteInvalid && prospectData.websiteUrl">
+                                ⚠️ Website URL must start with http:// or https://
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="form-field">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="tel" [(ngModel)]="prospectData.phoneNumber" (change)="validatePhone()"
+                                (input)="formatPhoneNumber(); checkProspectComplete()" placeholder="1234567890"
+                                maxlength="10" [class.invalid]="phoneInvalid || (!prospectData.phoneNumber && touched)">
+                            <div class="error-message" *ngIf="phoneInvalid && prospectData.phoneNumber">
+                                ⚠️ Phone number must be exactly 10 digits (numbers only)
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="form-field">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <div class="phone-input-wrapper">
+                                <!-- Country code dropdown button inside the input field -->
+                                <div class="country-code-selector">
+                                    <button type="button" class="country-btn" (click)="toggleCountryDropdown()">
+                                        +{{selectedCountryCode}} <span class="arrow">▼</span>
+                                    </button>
+                                    <div class="country-dropdown" *ngIf="showCountryDropdown">
+                                        <input type="text" class="search-box" placeholder="Search country..."
+                                            [(ngModel)]="countrySearch" (input)="filterCountries()">
+                                        <div class="country-list">
+                                            <div *ngFor="let country of filteredCountries" class="country-option"
+                                                (click)="selectCountry(country)">
+                                                {{country.name}} (+{{country.code}})
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phone number input -->
+                                <input type="tel" [(ngModel)]="prospectData.phoneNumber" (input)="onPhoneInput()"
+                                    [placeholder]="getPhonePlaceholder()"
+                                    [class.invalid]="phoneInvalid && prospectData.phoneNumber" class="phone-input">
+                            </div>
+                            <div class="error-message" *ngIf="phoneInvalid && prospectData.phoneNumber">
+                                ⚠️ {{phoneErrorMessage}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-navigation">
+                <button class="btn-next" (click)="goToCheckboxPage()" [disabled]="!isProspectComplete">
+                    Save and Continue →
+                </button>
+            </div>
+        </div>
+
+        <!-- ==================== STEP 2: CHECKBOX PAGE ==================== -->
+        <div *ngIf="showCheckboxPage" class="checkbox-page">
+
+            <div class="section-controls">
+                <h5>📌 Select Sections to Evaluate</h5>
+                <div class="section-checkboxes">
+                    <label class="checkbox-card" [class.disabled]="isOtherSectionActiveAndIncomplete('general')">
+                        <input type="checkbox" [(ngModel)]="showGeneralAI" (change)="onCheckboxChange('general')"
+                            [disabled]="isOtherSectionActiveAndIncomplete('general')">
+                        <span>⚙️ General AI Evaluation</span>
+                        <span *ngIf="isGeneralAIComplete" class="completed-badge">✓ Complete</span>
+                        <span *ngIf="isOtherSectionActiveAndIncomplete('general')" class="warning"></span>
+                    </label>
+                    <!-- RAG Checkbox - Disabled only if another section is active AND that section is not complete -->
+                    <label class="checkbox-card" [class.disabled]="isOtherSectionActiveAndIncomplete('rag')">
+                        <input type="checkbox" [(ngModel)]="showRAG" (change)="onCheckboxChange('rag')"
+                            [disabled]="isOtherSectionActiveAndIncomplete('rag')">
+                        <span>📚 RAG Evaluation</span>
+                        <span *ngIf="isRAGComplete" class="completed-badge">✓ Complete</span>
+                        <span *ngIf="isOtherSectionActiveAndIncomplete('rag')" class="warning">
+                        </span>
+                    </label>
+
+                    <!-- AI Agents Checkbox - Disabled only if another section is active AND that section is not complete -->
+                    <label class="checkbox-card" [class.disabled]="isOtherSectionActiveAndIncomplete('ai-agents')">
+                        <input type="checkbox" [(ngModel)]="showAIAgents" (change)="onCheckboxChange('ai-agents')"
+                            [disabled]="isOtherSectionActiveAndIncomplete('ai-agents')">
+                        <span>🤝 AI Agents Evaluation</span>
+                        <span *ngIf="isAIAgentsComplete" class="completed-badge">✓ Complete</span>
+                        <span *ngIf="isOtherSectionActiveAndIncomplete('ai-agents')" class="warning">
+                        </span>
+                    </label>
+
+                    <!-- LLMs Checkbox - Disabled only if another section is active AND that section is not complete -->
+                    <label class="checkbox-card" [class.disabled]="isOtherSectionActiveAndIncomplete('llm')">
+                        <input type="checkbox" [(ngModel)]="showLLMs" (change)="onCheckboxChange('llm')"
+                            [disabled]="isOtherSectionActiveAndIncomplete('llm')">
+                        <span>🧠 LLMs Evaluation</span>
+                        <span *ngIf="isLLMsComplete" class="completed-badge">✓ Complete</span>
+                        <span *ngIf="isOtherSectionActiveAndIncomplete('llm')" class="warning">
+                        </span>
+                    </label>
+
+                </div>
+            </div>
+
+            <!-- RAG Section -->
+            <div class="section rag-section" *ngIf="showRAG && visibleSection === 'rag'">
+                <div class="section-header">
+                    <h4>📚 RAG — Retrieval-Augmented Generation</h4>
+                    <!-- <span class="badge">10 Questions</span>
+                    <button class="btn-collapse" (click)="collapseSection()">✕</button> -->
+                </div>
+                <p class="section-desc">Rate each criterion 1-5 based on the prospect's current capability</p>
+                <div class="questions-list">
+                    <app-rating-field *ngFor="let question of getSectionQuestions('rag-evaluation')"
+                        [questionText]="question.text" [dimension]="question.dimension" [weightage]="question.weightage"
+                        [questionId]="question.id" [value]="ratings[question.id] || 0"
+                        (ratingChange)="onRatingChange(question.id, $event)">
+                    </app-rating-field>
+                </div>
+                <!-- <div class="section-actions" *ngIf="isRAGComplete">
+                    <button class="btn-complete" (click)="completeSection()">✓ Section Complete - Enable Other
+                        Sections</button>
+                </div> -->
+            </div>
+
+            <!-- AI Agents Section -->
+            <div class="section agents-section" *ngIf="showAIAgents && visibleSection === 'ai-agents'">
+                <div class="section-header">
+                    <h4>🤝 AI Agents — Autonomous Task Execution</h4>
+                    <!-- <span class="badge">10 Questions</span>
+                    <button class="btn-collapse" (click)="collapseSection()">✕</button> -->
+                </div>
+                <p class="section-desc">Rate each criterion 1-5 based on the prospect's current capability</p>
+                <div class="questions-list">
+                    <app-rating-field *ngFor="let question of getSectionQuestions('ai-agents-evaluation')"
+                        [questionText]="question.text" [dimension]="question.dimension" [weightage]="question.weightage"
+                        [questionId]="question.id" [value]="ratings[question.id] || 0"
+                        (ratingChange)="onRatingChange(question.id, $event)">
+                    </app-rating-field>
+                </div>
+                <!-- <div class="section-actions" *ngIf="isAIAgentsComplete">
+                    <button class="btn-complete" (click)="completeSection()">✓ Section Complete - Enable Other
+                        Sections</button>
+                </div> -->
+            </div>
+
+            <!-- LLM Section -->
+            <div class="section llm-section" *ngIf="showLLMs && visibleSection === 'llm'">
+                <div class="section-header">
+                    <h4>🧠 LLMs — Large Language Models</h4>
+                    <!-- <span class="badge">10 Questions</span>
+                    <button class="btn-collapse" (click)="collapseSection()">✕</button> -->
+                </div>
+                <p class="section-desc">Rate each criterion 1-5 based on the prospect's current capability</p>
+                <div class="questions-list">
+                    <app-rating-field *ngFor="let question of getSectionQuestions('llm-evaluation')"
+                        [questionText]="question.text" [dimension]="question.dimension" [weightage]="question.weightage"
+                        [questionId]="question.id" [value]="ratings[question.id] || 0"
+                        (ratingChange)="onRatingChange(question.id, $event)">
+                    </app-rating-field>
+                </div>
+                <!-- <div class="section-actions" *ngIf="isLLMsComplete">
+                    <button class="btn-complete" (click)="completeSection()">✓ Section Complete - Enable Other
+                        Sections</button>
+                </div> -->
+            </div>
+
+            <!-- General AI Section -->
+            <div class="section general-section" *ngIf="showGeneralAI && visibleSection === 'general'">
+                <div class="section-header">
+                    <h4>⚙️ General AI Readiness</h4>
+                    <!-- <span class="badge">10 Questions</span>
+                    <button class="btn-collapse" (click)="collapseSection()">✕</button> -->
+                </div>
+                <p class="section-desc">Rate each criterion 1-5 based on the prospect's current capability</p>
+                <div class="questions-list">
+                    <app-rating-field *ngFor="let question of getSectionQuestions('general-ai-evaluation')"
+                        [questionText]="question.text" [dimension]="question.dimension" [weightage]="question.weightage"
+                        [questionId]="question.id" [value]="ratings[question.id] || 0"
+                        (ratingChange)="onRatingChange(question.id, $event)">
+                    </app-rating-field>
+                </div>
+                <!-- <div class="section-actions" *ngIf="isGeneralAIComplete">
+                    <button class="btn-complete" (click)="completeSection()">✓ Section Complete - Enable Other
+                        Sections</button>
+                </div> -->
+            </div>
+            <div class="actions">
+                <button class="btn-export" (click)="exportReport()" [disabled]="isReportDisabled">
+                    📎 Generate Report
+                </button>
+            </div>
+        </div>
+    </ng-container>
+</div>

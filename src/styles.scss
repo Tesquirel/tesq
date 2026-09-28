@@ -1,0 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --tesquirel-blue: #3259db;
+  --tesquirel-green: #23d323;
+  --tesquirel-white: #ffffff;
+  --tesquirel-black: #000c29;
+  --tesquirel-card-background: #fff7d4;
+  --tesquirel-title-yellow: #ffd901;
+}
+
+html,
+body {
+  max-width: 100% !important;
+  // overflow-x: hidden !important;
+  outline: 0 !important;
+  overflow-x: hidden !important;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+p {
+  text-align: justify;
+}
+
+.offcanvas {
+  max-width: 100% !important;
+}
+
+.offcanvas-backdrop {
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+.offcanvas.show {
+  transform: none !important;
+}
+
+.ml-0 {
+  margin-left: 0px !important;
+}
+
+.unordered-list {
+  li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    margin-top: 20px;
+    align-items: baseline;
+
+    i {
+      color: var(--tesquirel-blue);
+      margin-right: 8px;
+    }
+  }
+}
+
+.no-click {
+  cursor: default;
+}
+
+.padding-top-bottom {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+.section-title {
+  max-width: none !important;
+}
+
+.unordered-list-style {
+  margin-left: 2rem;
+}
+
+.paragraph-description {
+  margin-top: 1rem;
+}
+
+// @media (max-width: 768px) {
+//   .footer-widget-wrap {
+//     padding-top: 0px !important;
+//     padding-bottom: 0px !important;
+//   }
+// }
+
+// .footer-widget-wrap {
+//   padding-top: 15px !important;
+//   padding-bottom: 15px !important;
+// }
+
+// table {
+//   font-family: Verdana, sans-serif;
+//   border-collapse: collapse;
+//   width: 100%;
+// }
+
+// td,
+// th {
+//   border: 1px solid #dddddd;
+//   text-align: left;
+//   padding: 8px;
+// }
+
+// tr:nth-child(even) {
+//   background-color: #dddddd;
+// }
+
+@media (max-width: 768px) {
+  .book-an-appointment-btn {
+    padding: 0 10px !important;
+    font-size: 16px !important;
+    width: 100% !important;
+  }
+}
+
+.menu-head {
+  cursor: pointer;
+  font-weight: bold;
+  color: #0e0e0e;
+
+  &.canvas {
+    color: var(--tesquirel-white);
+  }
+}

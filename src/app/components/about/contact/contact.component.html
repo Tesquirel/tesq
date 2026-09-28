@@ -1,0 +1,165 @@
+<!-- Contact Info Start -->
+<div class="section contact-info-section section-padding-02">
+  <div class="container">
+    <!-- Contact Info Wrap Start -->
+    <div class="contact-info-wrap">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <!--Single Contact Info Start -->
+          <div class="single-contact-info text-center">
+            <div class="info-icon">
+              <img src="assets/images/info-1.png" alt="TesQuirel Solutions" />
+            </div>
+            <div class="info-content">
+              <h5 class="title">Give us a call</h5>
+              <p><a href="tel:+918779274533">+91 86522 21943</a></p>
+              <br /><br />
+            </div>
+          </div>
+          <!--Single Contact Info End -->
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <!--Single Contact Info Start -->
+          <div class="single-contact-info text-center">
+            <div class="info-icon">
+              <img src="assets/images/info-2.png" alt="connect@tesquirel.com" />
+            </div>
+            <div class="info-content">
+              <h5 class="title">Drop us a line</h5>
+              <p>
+                <a href="mailto:connect@tesquirel.com"
+                  >connect&#64;tesquirel.com</a
+                >
+              </p>
+              <br /><br />
+            </div>
+          </div>
+          <!--Single Contact Info End -->
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <!--Single Contact Info Start -->
+          <div class="single-contact-info text-center">
+            <div class="info-icon">
+              <img
+                src="assets/images/info-3.png"
+                alt="TesQuirel Solutions Address"
+              />
+            </div>
+            <div class="info-content">
+              <h5 class="title">Visit our office</h5>
+              <p>
+                #66, 2nd Floor, Ittamadu, Banashankari 3rd Stage, Bengaluru-85
+              </p>
+            </div>
+          </div>
+          <!--Single Contact Info End -->
+        </div>
+      </div>
+    </div>
+    <!-- Contact Info Wrap End -->
+  </div>
+</div>
+<!-- Contact Info End -->
+
+<!-- Contact Start -->
+<div
+  class="section techwix-contact-section techwix-contact-section-02 techwix-contact-section-03 section-padding-02"
+>
+  <div class="container">
+    <!-- Contact Wrap Start -->
+    <div class="contact-wrap">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- Contact Form Start -->
+          <div class="contact-form">
+            <div class="contact-form-wrap">
+              <div class="heading-wrap text-center">
+                <span class="sub-title"> request a quote</span>
+                <h3 class="title">How May We Help You!</h3>
+              </div>
+              <form [formGroup]="contactForm">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!-- Single Form Start -->
+                    <div class="single-form">
+                      <input
+                        type="text"
+                        placeholder="Name *"
+                        formControlName="contactName"
+                      />
+                    </div>
+                    <!-- Single Form End -->
+                  </div>
+                  <div class="col-sm-6">
+                    <!-- Single Form Start -->
+                    <div class="single-form">
+                      <input
+                        type="email"
+                        placeholder="Email *"
+                        formControlName="contactEmailID"
+                      />
+                    </div>
+                    <!-- Single Form End -->
+                  </div>
+                  <div class="col-sm-12">
+                    <!-- Single Form Start -->
+                    <div class="single-form">
+                      <input
+                        type="text"
+                        placeholder="Subject *"
+                        formControlName="contactSubject"
+                      />
+                    </div>
+                    <!-- Single Form End -->
+                  </div>
+                  <div class="col-sm-12">
+                    <!-- Single Form Start -->
+                    <div class="single-form">
+                      <textarea
+                        placeholder="Write A Message *"
+                        formControlName="contactMessage"
+                      ></textarea>
+                    </div>
+                    <!-- Single Form End -->
+                  </div>
+                  <div class="col-sm-12">
+                    <!--  Single Form Start -->
+                    <div class="form-btn">
+                      <button
+                        class="btn"
+                        [disabled]="!contactForm.valid"
+                        (click)="sendEnquiry()"
+                      >
+                        Send Message
+                      </button>
+                    </div>
+                    <!--  Single Form End -->
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Contact Form End -->
+        </div>
+      </div>
+    </div>
+    <!-- Contact Wrap End -->
+  </div>
+</div>
+<!-- Contact End -->
+
+<!-- Contact Map Start -->
+<div class="section contact-map-section">
+  <div class="contact-map-wrap">
+    <iframe
+      scrolling="no"
+      marginheight="0"
+      marginwidth="0"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6319.87954167025!2d77.54136794635302!3d12.926611075504542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ff14a9066c9%3A0x3a8a2c9964a4afa9!2sTesQuirel%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1706846923596!5m2!1sen!2sin"
+      title="TesQuirel Solutions"
+      aria-label="TesQuirel Solutions"
+      frameborder="0"
+    ></iframe>
+  </div>
+</div>
+<!-- Contact Map End -->

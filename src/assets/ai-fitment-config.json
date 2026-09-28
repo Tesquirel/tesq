@@ -1,0 +1,90 @@
+
+{
+  "formTitle": "AI Project Fitment Evaluator",
+  "formSubtitle": "TesQuirel Solutions — Breez",
+  "ratingScale": {
+    "1": "Very Low - Little to no capability",
+    "2": "Low - Significant gaps remain",
+    "3": "Moderate - Development needed",
+    "4": "High - Well-positioned with minor gaps",
+    "5": "Very High - Fully capable and ready"
+  },
+  "sections": [
+    {
+      "id": "prospect-info",
+      "title": "Prospect Information",
+      "fields": [
+        { "id": "companyName", "label": "Company Name", "type": "text", "required": true },
+        { "id": "industry", "label": "Industry / Vertical", "type": "text", "required": true },
+        { "id": "companySize", "label": "Company Size (employees)", "type": "text" },
+        { "id": "annualRevenue", "label": "Annual Revenue (approx)", "type": "text" },
+        { "id": "headquarters", "label": "Headquarters / Location", "type": "text" },
+        { "id": "website", "label": "Website", "type": "url" },
+        { "id": "primaryContact", "label": "Primary Contact Name", "type": "text" },
+        { "id": "title", "label": "Title / Designation", "type": "text" },
+        { "id": "email", "label": "Email Address", "type": "email" },
+        { "id": "phone", "label": "Phone Number", "type": "tel" },
+        { "id": "secondaryContact", "label": "Secondary Contact", "type": "text" },
+        { "id": "evaluatorName", "label": "Evaluator Name", "type": "text" },
+        { "id": "evaluationDate", "label": "Evaluation Date", "type": "date" },
+        { "id": "leadSource", "label": "Lead Source", "type": "select", "options": ["Website", "Referral", "Conference", "Outbound", "Partner"] },
+        { "id": "dealStage", "label": "Deal Stage", "type": "select", "options": ["Discovery", "Proposal", "Negotiation", "Closed"] },
+        { "id": "estimatedDealValue", "label": "Estimated Deal Value", "type": "text" },
+        { "id": "targetCategory", "label": "Target Project Category", "type": "select", "options": ["RAG", "AI Agents", "LLMs", "General AI"] },
+        { "id": "backgroundNotes", "label": "Background / Context", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "rag-evaluation",
+      "title": "RAG — Retrieval-Augmented Generation",
+      "category": "RAG",
+      "questions": [
+        { "id": "rag_q1", "text": "Is there a clear need to query domain-specific knowledge bases or proprietary data that public LLMs don't know?", "dimension": "Domain Specificity", "weightage": 0.12 },
+        { "id": "rag_q2", "text": "Does the use case require explainable, source-cited AI outputs (e.g., 'Answer based on Policy Doc v2.3')?", "dimension": "Explainability & Trust", "weightage": 0.10 },
+        { "id": "rag_q3", "text": "Is real-time or frequently updated information retrieval critical to the use case?", "dimension": "Freshness & Recency", "weightage": 0.10 },
+        { "id": "rag_q4", "text": "Does the use case require synthesising insights across multiple documents or sources simultaneously?", "dimension": "Multi-document Reasoning", "weightage": 0.10 },
+        { "id": "rag_q5", "text": "Is there a governance or data security requirement controlling which users can access which knowledge?", "dimension": "Access Control & Governance", "weightage": 0.10 },
+        { "id": "rag_q6", "text": "Is the primary use case a natural fit for RAG (e.g., internal Q&A, support bot, policy assistant, contract review)?", "dimension": "Use Case Alignment", "weightage": 0.10 }
+      ]
+    },
+    {
+      "id": "ai-agents-evaluation",
+      "title": "AI Agents — Autonomous Task Execution",
+      "category": "AI Agents",
+      "questions": [
+        { "id": "agents_q1", "text": "Is there a clear need for autonomous task execution — AI taking action without constant human approval?", "dimension": "Autonomy Tolerance", "weightage": 0.10 },
+        { "id": "agents_q2", "text": "Does the use case involve integration with multiple tools, APIs, or enterprise systems (CRM, ERP, ITSM, etc.)?", "dimension": "Tool & API Ecosystem", "weightage": 0.12 },
+        { "id": "agents_q3", "text": "Does the prospect have well-defined success criteria and measurable outcomes for agent-driven tasks?", "dimension": "Outcome Definition", "weightage": 0.10 },
+        { "id": "agents_q4", "text": "Does the prospect have a risk management or human-in-the-loop framework for oversight of agent actions?", "dimension": "Risk & Governance", "weightage": 0.10 },
+        { "id": "agents_q5", "text": "Does the prospect face regulatory or compliance constraints that require full auditability of automated actions?", "dimension": "Compliance & Auditability", "weightage": 0.08 },
+        { "id": "agents_q6", "text": "Is leadership committed to piloting and iterating on agentic AI, with budget for experimentation?", "dimension": "Executive Sponsorship", "weightage": 0.08 }
+      ]
+    },
+    {
+      "id": "llm-evaluation",
+      "title": "LLMs — Large Language Models",
+      "category": "LLMs",
+      "questions": [
+        { "id": "llm_q1", "text": "Does the prospect have high-volume natural language generation needs (e.g., content creation, email drafting, report generation)?", "dimension": "NLG Volume & Use Case", "weightage": 0.10 },
+        { "id": "llm_q2", "text": "Is there a requirement for customer-facing conversational interfaces (chatbot, virtual assistant, self-service)?", "dimension": "Conversational AI Need", "weightage": 0.12 },
+        { "id": "llm_q3", "text": "Does the prospect require fine-tuning or domain adaptation of an LLM on proprietary datasets?", "dimension": "Fine-tuning Requirement", "weightage": 0.10 },
+        { "id": "llm_q4", "text": "Are the latency and throughput requirements of the use case compatible with LLM API response times?", "dimension": "Performance SLA Fit", "weightage": 0.10 },
+        { "id": "llm_q5", "text": "Is there a need for consistent brand voice, tone, and output control across AI-generated content?", "dimension": "Brand & Output Control", "weightage": 0.08 },
+        { "id": "llm_q6", "text": "Does the prospect have a content safety, moderation, and responsible AI policy in place?", "dimension": "Safety & Compliance", "weightage": 0.10 }
+      ]
+    },
+    {
+      "id": "general-ai-evaluation",
+      "title": "General AI Readiness",
+      "category": "General AI",
+      "questions": [
+        { "id": "general_q1", "text": "Does senior leadership have a clear, articulated AI vision with active executive sponsorship for the initiative?", "dimension": "Leadership & Vision", "weightage": 0.12 },
+        { "id": "general_q2", "text": "Is there a well-defined business use case with specific, measurable outcomes tied to the AI project?", "dimension": "Use Case Definition", "weightage": 0.12 },
+        { "id": "general_q3", "text": "Is the prospect's data infrastructure (pipelines, storage, APIs) mature enough to support AI integration and deployment?", "dimension": "Data & Tech Infrastructure", "weightage": 0.10 },
+        { "id": "general_q4", "text": "Does the prospect have a defined framework for AI ethics, bias monitoring, and regulatory compliance?", "dimension": "Ethics & Compliance", "weightage": 0.08 },
+        { "id": "general_q5", "text": "Does the prospect have realistic timeline expectations and adequate budget allocated for the AI initiative?", "dimension": "Budget & Timeline Realism", "weightage": 0.10 },
+        { "id": "general_q6", "text": "Is there a pilot/POC mindset — willingness to start small, measure, and iterate before full-scale rollout?", "dimension": "Iterative & Agile Mindset", "weightage": 0.08 }
+      ]
+    }
+  ]
+}

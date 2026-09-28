@@ -1,0 +1,76 @@
+.banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform; // improves performance
+}
+
+.swiper-slide {
+  width: 100% !important;
+  height: 100% !important;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    pointer-events: none; // prevents drag issues
+  }
+}
+
+.swiper-pagination {
+  bottom: 30px !important;
+  
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 6px;
+    transition: 0.3s;
+    
+    &-active {
+      background: white;
+      width: 24px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  background: rgba(0,0,0,0.3);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  
+  &:hover {
+    background: rgba(0,0,0,0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}

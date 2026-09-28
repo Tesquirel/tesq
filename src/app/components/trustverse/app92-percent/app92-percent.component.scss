@@ -1,0 +1,338 @@
+:host {
+  --ap92-navy: #0a2149;
+  --ap92-navy-deep: #061530;
+  --ap92-blue: #2f6fed;
+  --ap92-blue-light: #6fa1ff;
+  --ap92-teal: #17c3b2;
+  --ap92-ink: #0f1f3d;
+  --ap92-body: #4a5872;
+  --ap92-tint: #f4f7fd;
+  --ap92-border: #e3e9f5;
+  --ap92-white: #ffffff;
+
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--ap92-ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ap92 {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.ap92-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 clamp(16px, 3vw, 40px);
+
+  &--narrow {
+    max-width: 100%;
+  }
+}
+
+/* ---------- HERO ---------- */
+.ap92-hero {
+  position: relative;
+  width: 100%;
+}
+
+.ap92-hero__media {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.ap92-hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 90px;
+}
+
+.ap92-hero__cta-wrap {
+  padding: clamp(24px, 4vw, 36px) clamp(16px, 3vw, 40px);
+  text-align: center;
+  background: var(--ap92-white);
+}
+
+@media (max-width: 700px) {
+  .ap92-hero__cta-wrap .ap92-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ---------- BUTTONS ---------- */
+.ap92-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+  &--primary {
+    background: var(--ap92-blue);
+    color: var(--ap92-white);
+    box-shadow: 0 10px 24px rgba(47, 111, 237, 0.35);
+
+    &:hover {
+      background: #245ecf;
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--ap92-blue-light);
+      outline-offset: 3px;
+    }
+  }
+
+  &--light {
+    background: var(--ap92-white);
+    color: var(--ap92-navy);
+    box-shadow: 0 10px 24px rgba(4, 12, 30, 0.2);
+
+    &:hover {
+      background: #e8effe;
+    }
+  }
+}
+
+/* ---------- GENERIC SECTIONS ---------- */
+.ap92-section {
+  width: 100%;
+  padding: clamp(56px, 8vw, 96px) 0;
+  background: var(--ap92-white);
+
+  &--tint {
+    background: var(--ap92-tint);
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--ap92-navy);
+    line-height: 1.25;
+    text-align: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--center {
+      text-align: center;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__text {
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--ap92-body);
+    text-align: center;
+    max-width: 100%;
+
+    &--center {
+      text-align: center;
+      max-width: 100%;
+      margin: 0 auto 8px;
+    }
+
+    + &__text {
+      margin-top: 16px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 96px;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px rgba(10, 33, 73, 0.12);
+  }
+}
+
+/* ---------- WHAT MUST SIT BESIDE ACCURACY ---------- */
+.ap92-signals {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  &__card {
+    padding: 28px 24px;
+    background: var(--ap92-white);
+    border: 1px solid var(--ap92-border);
+    border-radius: 14px;
+    text-align: center;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      border-color: var(--ap92-blue);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ap92-navy);
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--ap92-body);
+  }
+}
+
+/* ---------- FAQ ---------- */
+.ap92-faq {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ap92-faq__item {
+  border: 1.5px solid var(--ap92-border);
+  border-radius: 14px;
+  background: var(--ap92-white);
+  padding: 0 24px;
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &--open {
+    border-color: var(--ap92-blue);
+    box-shadow: 0 0 0 1px rgba(47, 111, 237, 0.12);
+  }
+}
+
+.ap92-faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--ap92-navy);
+}
+
+.ap92-faq__question-text {
+  text-align: left;
+}
+
+.ap92-faq__icon {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--ap92-blue);
+  border-bottom: 2px solid var(--ap92-blue);
+  transform: rotate(45deg) translateY(-3px);
+  transition: transform 0.2s ease;
+}
+
+.ap92-faq__item--open .ap92-faq__icon {
+  transform: rotate(-135deg) translateY(-1px);
+}
+
+.ap92-faq__answer {
+  padding: 0 0 22px;
+  text-align: left;
+
+  p {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--ap92-body);
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+.ap92-link {
+  display: block;
+  text-align: center;
+  margin: 28px auto 0;
+  color: var(--ap92-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: #1c4fbd;
+  }
+}
+
+/* ---------- CLOSING CTA ---------- */
+.ap92-cta {
+  width: 100%;
+  padding: clamp(56px, 8vw, 88px) 0;
+  background: linear-gradient(120deg, var(--ap92-navy-deep), var(--ap92-navy));
+  text-align: center;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--ap92-white);
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0 auto 30px;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.78);
+    text-align: center;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .ap92-signals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .ap92-signals {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ap92-btn,
+  .ap92-signals__card {
+    transition: none;
+  }
+}

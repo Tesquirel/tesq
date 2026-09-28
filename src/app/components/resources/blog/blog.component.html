@@ -1,0 +1,45 @@
+<!-- Blog Start -->
+<div class="section techwix-blog-grid-section section-padding">
+  <div class="container">
+    <div class="techwix-blog-grid-wrap">
+      <div class="row">
+        @for(blog of blogs; track blog){
+        <div class="col-lg-4 col-md-6">
+          <!-- Single Blog Start -->
+          <div class="single-blog">
+            <div class="blog-image">
+              <span
+                ><img src="{{ blog.poster }}" alt="{{ blog.poster }}"
+              /></span>
+              <div class="top-meta">
+                <span class="date"
+                  ><span>{{ blog.created | date : "dd" }}</span
+                  >{{ blog.created | date : "MMM" }}</span
+                >
+              </div>
+            </div>
+            <div class="blog-content cursor-pointer">
+              <div class="blog-meta">
+                <span
+                  ><i class="fas fa-user"></i>
+                  <span>{{ blog.author }}</span></span
+                >
+              </div>
+              <h3 class="title">
+                <span>{{ blog.title }} </span>
+              </h3>
+              <div class="blog-btn">
+                <a class="blog-btn-link" (click)="blogDetail(blog.id)"
+                  >Read Full <i class="fas fa-long-arrow-alt-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Single Blog End -->
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Blog End -->

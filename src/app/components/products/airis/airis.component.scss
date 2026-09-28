@@ -1,0 +1,48 @@
+@media only screen and (max-width: 1199px) {
+  .techwix-hero-section-04 .hero-content .title {
+    font-size: 50px;
+  }
+}
+
+.techwix-hero-section-04 .hero-content .title {
+  font-size: 72px;
+}
+
+.techwix-service-section-03 .section-title {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.techwix-service-section-03 .section-title .title {
+  color: var(--tesquirel-white);
+}
+
+.techwix-service-section-03 .service-wrap-03 {
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  .techwix-hero-section-04 .hero-content .title {
+    font-size: 34px;
+  }
+}
+
+.techwix-hero-section-04 {
+  height: 100vh;
+}
+
+.techwix-cta-section-04 .cta-wrap {
+  padding: 30px;
+}
+
+.verified-vision {
+  color: var(--tesquirel-title-yellow);
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 991px) {
+  .cta-info {
+    margin-top: 50px;
+  }
+}
