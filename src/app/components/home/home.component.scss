@@ -1,9 +1,20 @@
+/* =====================================================================
+   HOME COMPONENT STYLES  (desktop + tablet + mobile)
+   ===================================================================== */
+
+:host {
+  display: block;
+  overflow-x: clip; /* hide sideways overflow without creating a 2nd scrollbar */
+}
+
+/* ---------------------------------------------------------------------
+   Base / desktop
+   --------------------------------------------------------------------- */
 .techwix-cta-section-02 .cta-wrap .cta-btn {
   text-align: center !important;
 }
 
 .logos-img {
-  // width: 100px;
   height: 60px;
   display: flex;
   justify-self: center;
@@ -21,7 +32,6 @@
 
 .swiper-slide {
   flex-shrink: 0;
-  width: auto;
 }
 
 .slide-box {
@@ -58,7 +68,6 @@
   padding: 1rem;
   margin: 0.5rem;
   cursor: pointer;
-  // background: linear-gradient(90deg, #fefefe, #ececec);
   background: var(--tesquirel-card-background);
 }
 
@@ -70,68 +79,6 @@
   padding: 0px !important;
 }
 
-@media (min-width: 768px) {
-  #testimonials .swiper-pagination {
-    z-index: 20;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-  }
-  #testimonials .swiper-pagination-bullet {
-    width: 8px !important;
-    height: 8px !important;
-    border-radius: 50% !important;
-    opacity: 0.35 !important;
-    background: #000 !important;
-  }
-  #testimonials .swiper-pagination-bullet-active {
-    opacity: 1 !important;
-    background: var(--tesquirel-green) !important;
-  }
-
-  #testimonials .swiper-pagination {
-    position: relative !important;
-    bottom: 0 !important;
-    z-index: 10;
-    display: block !important;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
-    width: 100%;
-  }
-
-  /* Fix Swiper pagination for mobile */
-  #testimonials .swiper-pagination {
-    position: relative !important;
-    bottom: 10px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important;
-  }
-
-  #testimonials .swiper-pagination-bullet {
-    width: 8px !important;
-    height: 8px !important;
-    background: #333 !important;
-    opacity: 0.3 !important;
-    border-radius: 50% !important;
-    flex: 0 0 auto !important;
-  }
-
-  #testimonials .swiper-pagination-bullet-active {
-    background: #000 !important;
-    opacity: 1 !important;
-  }
-
-  #testimonials .swiper-pagination-bullet-active {
-    background: #000 !important;
-    opacity: 1 !important;
-  }
-}
-
 .testing-strategy-title {
   text-align: center;
   margin-bottom: 2rem;
@@ -140,6 +87,12 @@
 .product-focused-img {
   display: flex;
   justify-content: center;
+}
+
+.product-focused-img img,
+.testing-strategy-img img {
+  max-width: 100%;
+  height: auto;
 }
 
 .product-img-content {
@@ -177,14 +130,14 @@
 .cta-appointment {
   font-size: 24px !important;
 }
-/* 1. Make the columns flex containers so their children can stretch */
+
+/* Service cards: equal height */
 .techwix-service-section-06 .col-xl-3,
 .techwix-service-section-06 .col-sm-6 {
   display: flex;
   align-items: stretch;
 }
 
-/* 2. Make the service card fill the full height of the column */
 .techwix-service-section-06 .service-item-05 {
   width: 100%;
   height: 100%;
@@ -192,7 +145,345 @@
   flex-direction: column;
 }
 
-/* Optional: If you want the text content to fill the remaining space evenly */
 .techwix-service-section-06 .service-item-05 .service-content {
   flex-grow: 1;
+}
+
+/* Testimonial pagination (desktop) */
+@media (min-width: 768px) {
+  #testimonials .swiper-pagination {
+    position: relative !important;
+    bottom: 0 !important;
+    z-index: 10;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  #testimonials .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    opacity: 0.35 !important;
+    background: #000 !important;
+  }
+  #testimonials .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background: var(--tesquirel-green) !important;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Tablet + mobile  (below 992px, columns are stacked)
+   --------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  /* --- remove the big empty gaps between sections --- */
+  .section.techwix-about-section-06 {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    margin-top: 0 !important;
+
+    > .shape-1,
+    .about-img > .shape-1 {
+      display: none !important; /* decorative shape adds empty height */
+    }
+
+    .about-wrap,
+    .about-content-wrap {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .about-img {
+      position: relative;
+      margin: 0 auto 20px;
+      max-width: 560px;
+
+      .image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+
+    .about-content-wrap .text {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .about-list-wrap .about-list {
+      padding: 0;
+      .list {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .section.techwix-about-section-05 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+
+    .about-img-wrap {
+      margin-bottom: 24px;
+
+      .about-img img {
+        width: 100%;
+        height: auto;
+      }
+      .about-img-sm {
+        display: none; /* overlapping small image is cramped on phones */
+      }
+    }
+    .about-content .title {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+  }
+
+  .section.techwix-service-section-06 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+
+    .section-title {
+      max-width: 100%;
+    }
+    .service-item-05 {
+      margin-bottom: 24px;
+      .service-img img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .section.techwix-testimonial-section-02,
+  .section.techwix-brand-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* --- headings --- */
+  .section-title {
+    text-align: center;
+    margin-bottom: 24px;
+
+    .title {
+      font-size: 28px;
+      line-height: 1.3;
+    }
+    .sub-title {
+      font-size: 14px;
+    }
+  }
+
+  .solution-suite {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  /* --- keep banner tight to the next section --- */
+  app-banner,
+  tsq-banner {
+    display: block;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Tablet / mobile (768px and below)
+   --------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
+    width: 100%;
+  }
+
+  #testimonials .swiper-pagination {
+    position: relative !important;
+    bottom: 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  #testimonials .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    background: #333 !important;
+    opacity: 0.3 !important;
+    border-radius: 50% !important;
+    flex: 0 0 auto !important;
+  }
+
+  #testimonials .swiper-pagination-bullet-active {
+    background: #000 !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Phones (575px and below)
+   --------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .section-title .title {
+    font-size: 24px;
+  }
+
+  /* product cards: logo on top, text centred */
+  .about-list-item {
+    margin: 0 0 16px 0;
+    padding: 16px;
+    text-align: center;
+
+    .about-img {
+      margin-bottom: 12px;
+    }
+    .about-text {
+      .title {
+        font-size: 18px;
+      }
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .logos-img {
+    height: 48px;
+    margin: 0 auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* testimonials */
+  .techwix-testimonial-section-02 .single-testimonial-02 .testimonial-content {
+    padding: 16px !important;
+
+    p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+
+  #testimonials .swiper-button-prev,
+  #testimonials .swiper-button-next {
+    display: none; /* swipe + dots on phones */
+  }
+
+  /* client logos */
+  .techwix-brand-section .single-brand img {
+    max-height: 60px;
+    width: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  /* CTA blocks */
+  .techwix-cta-section-02 {
+    .cta-wrap {
+      padding: 30px 16px;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+    }
+    .cta-content {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .cta-btn {
+      margin-bottom: 12px;
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  }
+
+  .cta-appointment {
+    font-size: 18px !important;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   BANNER IMAGE + TIGHTER SPACING (mobile / tablet)
+   Styles the <tsq-banner> child from here so no banner file is needed.
+   --------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  tsq-banner {
+    display: block;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    ::ng-deep {
+      /* let every wrapper follow the image height (no fixed heights) */
+      [class*='banner'],
+      [class*='hero'],
+      [class*='slider'],
+      [class*='carousel'],
+      .swiper,
+      .swiper-wrapper,
+      .swiper-slide {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+      /* show the WHOLE image, scaled to the screen width */
+      img {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+      }
+
+      /* dots sit under the image instead of covering it */
+      .swiper-pagination {
+        position: relative !important;
+        bottom: auto !important;
+        margin: 8px 0 !important;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        transform: scale(0.6);
+      }
+    }
+  }
+
+  /* less empty space between every section */
+  .section.padding-top-bottom,
+  .section.section-padding,
+  .section.section-padding-02,
+  .section.section-padding-03 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .section-title {
+    margin-bottom: 16px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section.padding-top-bottom,
+  .section.section-padding,
+  .section.section-padding-02,
+  .section.section-padding-03 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .about-list-item {
+    margin-bottom: 12px;
+  }
 }
